@@ -1,0 +1,2019 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "id": 1,
+    "key": "human",
+    "title": {
+      "en": "Human",
+      "uk": "Людина",
+      "ru": "Человек",
+      "pl": "Człowiek"
+    },
+    "subtopics": [
+      {
+        "id": 1,
+        "key": "personal_data",
+        "title": {
+          "en": "Personal data",
+          "uk": "Особисті дані",
+          "ru": "Личные данные",
+          "pl": "Dane personalne"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "age",
+              "uk": "вік",
+              "ru": "возраст",
+              "pl": "wiek"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "country",
+              "uk": "країна",
+              "ru": "страна",
+              "pl": "państwo"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "date of birth",
+              "uk": "дата народження",
+              "ru": "дата рождения",
+              "pl": "data urodzenia"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "email address",
+              "uk": "адреса електронної пошти",
+              "ru": "адрес электронной почты",
+              "pl": "adres e-mailowy"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "female",
+              "uk": "жіночої статі",
+              "ru": "женского пола",
+              "pl": "płci żeńskiej"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "home address",
+              "uk": "домашня адреса",
+              "ru": "домашний адрес",
+              "pl": "adres zamieszkania"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "interests",
+              "uk": "інтереси",
+              "ru": "интересы",
+              "pl": "zainteresowania"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "male",
+              "uk": "чоловічої статі",
+              "ru": "мужского пола",
+              "pl": "płci męskiej"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "name",
+              "uk": "ім'я",
+              "ru": "имя",
+              "pl": "imię"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "nationality",
+              "uk": "національність",
+              "ru": "национальность",
+              "pl": "narodowość"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "phone number",
+              "uk": "номер телефону",
+              "ru": "номер телефона",
+              "pl": "numer telefonu"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "place of birth",
+              "uk": "місце народження",
+              "ru": "место рождения",
+              "pl": "miejsce urodzenia"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "sex",
+              "uk": "стать",
+              "ru": "пол",
+              "pl": "płeć"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "surname",
+              "uk": "прізвище",
+              "ru": "фамилия",
+              "pl": "nazwisko"
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "key": "marital_status",
+        "title": {
+          "en": "Marital status",
+          "uk": "Сімейний стан",
+          "ru": "Семейное положение",
+          "pl": "Stan cywilny"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "divorced",
+              "uk": "розлучений",
+              "ru": "разведённый",
+              "pl": "rozwiedziony"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "married",
+              "uk": "заміжня/одружений",
+              "ru": "замужем/женат",
+              "pl": "zamężna/żonaty"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "single",
+              "uk": "неодружений/незаміжня",
+              "ru": "неженатый/незамужняя",
+              "pl": "stanu wolnego"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "key": "stages_of_life",
+        "title": {
+          "en": "Stages of life",
+          "uk": "Етапи життя",
+          "ru": "Этапы жизни",
+          "pl": "Okresy życia"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "adult",
+              "uk": "дорослий",
+              "ru": "взрослый",
+              "pl": "dorosły"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "be born",
+              "uk": "народитися",
+              "ru": "родиться",
+              "pl": "urodzić się"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "child, children",
+              "uk": "дитина, діти",
+              "ru": "ребёнок, дети",
+              "pl": "dziecko, dzieci"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "childhood",
+              "uk": "дитинство",
+              "ru": "детство",
+              "pl": "dzieciństwo"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "elderly person",
+              "uk": "літня людина",
+              "ru": "пожилой человек",
+              "pl": "osoba w podeszłym wieku"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "go to primary/secondary school",
+              "uk": "ходити до початкової/середньої школи",
+              "ru": "ходить в начальную/среднюю школу",
+              "pl": "uczęszczać do szkoły podstawowej/średniej"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "go to university",
+              "uk": "вступити до університету",
+              "ru": "поступить в университет",
+              "pl": "iść na studia"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "grow up",
+              "uk": "виростати",
+              "ru": "вырастать",
+              "pl": "wychowywać się/dorastać"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "leave home",
+              "uk": "залишити батьківський дім",
+              "ru": "покинуть родительский дом",
+              "pl": "opuścić dom rodzinny"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "middle-aged (person)",
+              "uk": "людина середнього віку",
+              "ru": "человек среднего возраста",
+              "pl": "(osoba) w średnim wieku"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "move house",
+              "uk": "переїхати",
+              "ru": "переехать",
+              "pl": "przeprowadzić się"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "old",
+              "uk": "старий",
+              "ru": "старый",
+              "pl": "stary"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "retire",
+              "uk": "вийти на пенсію",
+              "ru": "выйти на пенсию",
+              "pl": "przejść na emeryturę"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "retired",
+              "uk": "на пенсії",
+              "ru": "на пенсии",
+              "pl": "na emeryturze"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "teenager",
+              "uk": "підліток",
+              "ru": "подросток",
+              "pl": "nastolatek"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "young",
+              "uk": "молодий",
+              "ru": "молодой",
+              "pl": "młody"
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "key": "appearance",
+        "title": {
+          "en": "Appearance",
+          "uk": "Зовнішність",
+          "ru": "Внешность",
+          "pl": "Wygląd zewnętrzny"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "attractive",
+              "uk": "привабливий",
+              "ru": "привлекательный",
+              "pl": "ładny, atrakcyjny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "bald",
+              "uk": "лисий",
+              "ru": "лысый",
+              "pl": "łysy"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "beard",
+              "uk": "борода",
+              "ru": "борода",
+              "pl": "broda"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "beautiful",
+              "uk": "вродливий",
+              "ru": "красивый",
+              "pl": "piękny"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "blonde",
+              "uk": "блондин/світле волосся",
+              "ru": "блондин/светлые волосы",
+              "pl": "blond (włosy)"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "curly",
+              "uk": "кучеряве волосся",
+              "ru": "кудрявые волосы",
+              "pl": "kręcone (włosy)"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "dark",
+              "uk": "темний",
+              "ru": "тёмный",
+              "pl": "ciemny"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "fair",
+              "uk": "світла шкіра/світле волосся",
+              "ru": "светлая кожа/светлые волосы",
+              "pl": "jasna (karnacja), jasne (włosy)"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "fit/sporty",
+              "uk": "спортивний",
+              "ru": "спортивный",
+              "pl": "wysportowany"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "good-looking",
+              "uk": "привабливий, вродливий",
+              "ru": "привлекательный, красивый",
+              "pl": "atrakcyjny, przystojny"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "grey",
+              "uk": "сірий, сиве волосся",
+              "ru": "серый, седые волосы",
+              "pl": "szary, siwe (włosy)"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "handsome",
+              "uk": "вродливий",
+              "ru": "красивый",
+              "pl": "przystojny"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "height",
+              "uk": "зріст",
+              "ru": "рост",
+              "pl": "wzrost"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "long",
+              "uk": "довгий",
+              "ru": "длинный",
+              "pl": "długi"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "moustache",
+              "uk": "вуса",
+              "ru": "усы",
+              "pl": "wąsy"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "of medium height",
+              "uk": "середнього зросту",
+              "ru": "среднего роста",
+              "pl": "średniego wzrostu"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "short",
+              "uk": "короткий, низького зросту",
+              "ru": "короткий, невысокого роста",
+              "pl": "krótki, niskiego wzrostu"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "slim",
+              "uk": "стрункий",
+              "ru": "стройный",
+              "pl": "szczupły"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "straight",
+              "uk": "прямий, пряме волосся",
+              "ru": "прямой, прямые волосы",
+              "pl": "prosty, proste (włosy)"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "tall",
+              "uk": "високого зросту",
+              "ru": "высокого роста",
+              "pl": "wysokiego wzrostu"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "thin",
+              "uk": "худий",
+              "ru": "худой",
+              "pl": "chudy"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "ugly",
+              "uk": "некрасивий",
+              "ru": "некрасивый",
+              "pl": "brzydki"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "wavy",
+              "uk": "хвилясте волосся",
+              "ru": "волнистые волосы",
+              "pl": "pofalowane (włosy)"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "weight",
+              "uk": "вага",
+              "ru": "вес",
+              "pl": "waga"
+            }
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "key": "clothes_and_accessories",
+        "title": {
+          "en": "Clothes and accessories",
+          "uk": "Одяг та аксесуари",
+          "ru": "Одежда и аксессуары",
+          "pl": "Ubrania i akcesoria"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "belt",
+              "uk": "ремінь",
+              "ru": "ремень",
+              "pl": "pasek"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "blouse",
+              "uk": "блузка",
+              "ru": "блузка",
+              "pl": "bluzka damska"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "boots",
+              "uk": "черевики, чоботи",
+              "ru": "ботинки, сапоги",
+              "pl": "buty za kostkę, kozaki"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "bracelet",
+              "uk": "браслет",
+              "ru": "браслет",
+              "pl": "bransoletka"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "chain",
+              "uk": "ланцюжок",
+              "ru": "цепочка",
+              "pl": "łańcuszek"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "coat",
+              "uk": "пальто",
+              "ru": "пальто",
+              "pl": "płaszcz"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "dress",
+              "uk": "сукня",
+              "ru": "платье",
+              "pl": "sukienka"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "earrings",
+              "uk": "сережки",
+              "ru": "серьги",
+              "pl": "kolczyki"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "flats",
+              "uk": "туфлі без підборів",
+              "ru": "туфли без каблука",
+              "pl": "buty na płaskim obcasie"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "hat",
+              "uk": "капелюх, шапка",
+              "ru": "шляпа, шапка",
+              "pl": "kapelusz, czapka"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "high-heels",
+              "uk": "туфлі на високих підборах",
+              "ru": "туфли на высоком каблуке",
+              "pl": "buty na wysokim obcasie"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "hoodie",
+              "uk": "худі",
+              "ru": "худи",
+              "pl": "bluza z kapturem"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "jacket",
+              "uk": "куртка, піджак",
+              "ru": "куртка, пиджак",
+              "pl": "kurtka, marynarka"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "jewellery",
+              "uk": "прикраси",
+              "ru": "украшения",
+              "pl": "biżuteria"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "jumper/sweater",
+              "uk": "светр",
+              "ru": "свитер",
+              "pl": "sweter"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "necklace",
+              "uk": "намисто",
+              "ru": "ожерелье",
+              "pl": "naszyjnik"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "ring",
+              "uk": "каблучка",
+              "ru": "кольцо",
+              "pl": "pierścionek"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "scarf",
+              "uk": "шарф, шаль",
+              "ru": "шарф, шаль",
+              "pl": "szalik, szal"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "shirt",
+              "uk": "сорочка",
+              "ru": "рубашка",
+              "pl": "koszula"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "shorts",
+              "uk": "шорти",
+              "ru": "шорты",
+              "pl": "szorty"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "skirt",
+              "uk": "спідниця",
+              "ru": "юбка",
+              "pl": "spódnica"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "socks",
+              "uk": "шкарпетки",
+              "ru": "носки",
+              "pl": "skarpety"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "suit",
+              "uk": "костюм",
+              "ru": "костюм",
+              "pl": "garnitur"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "sweatshirt",
+              "uk": "толстовка",
+              "ru": "толстовка",
+              "pl": "bluza dresowa"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "tie",
+              "uk": "краватка",
+              "ru": "галстук",
+              "pl": "krawat"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "tights",
+              "uk": "колготки",
+              "ru": "колготки",
+              "pl": "rajstopy"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "top",
+              "uk": "топ, блузка",
+              "ru": "топ, блузка",
+              "pl": "bluzka, top"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "tracksuit",
+              "uk": "спортивний костюм",
+              "ru": "спортивный костюм",
+              "pl": "dres"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "trainers",
+              "uk": "кросівки",
+              "ru": "кроссовки",
+              "pl": "buty sportowe"
+            }
+          },
+          {
+            "id": 30,
+            "translations": {
+              "en": "trousers",
+              "uk": "штани",
+              "ru": "брюки",
+              "pl": "spodnie"
+            }
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "key": "describing_clothes",
+        "title": {
+          "en": "Describing clothes",
+          "uk": "Опис одягу",
+          "ru": "Описание одежды",
+          "pl": "Opisywanie ubrań"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "casual",
+              "uk": "повсякденний",
+              "ru": "повседневный",
+              "pl": "nieformalny, codzienny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "checked",
+              "uk": "у клітинку",
+              "ru": "в клетку",
+              "pl": "w kratkę"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "cotton",
+              "uk": "бавовняний, бавовна",
+              "ru": "хлопковый, хлопок",
+              "pl": "bawełniany, bawełna"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "designer",
+              "uk": "дизайнерський, брендовий",
+              "ru": "дизайнерский, брендовый",
+              "pl": "markowy"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "elegant/smart",
+              "uk": "елегантний",
+              "ru": "элегантный",
+              "pl": "elegancki"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "fashionable/trendy",
+              "uk": "модний",
+              "ru": "модный",
+              "pl": "modny"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "fit",
+              "uk": "підходити за розміром",
+              "ru": "подходить по размеру",
+              "pl": "pasować (o rozmiarze)"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "flowery",
+              "uk": "у квіти",
+              "ru": "в цветочек",
+              "pl": "w kwiaty"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "leather",
+              "uk": "шкіряний, шкіра",
+              "ru": "кожаный, кожа",
+              "pl": "skórzany, skóra"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "match",
+              "uk": "пасувати, поєднуватися",
+              "ru": "сочетаться",
+              "pl": "pasować (o zestawieniu ubrań i ich wzorów, kolorów)"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "plain",
+              "uk": "однотонний, без візерунка",
+              "ru": "однотонный, без узора",
+              "pl": "gładki, bez wzoru"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "sports",
+              "uk": "спортивний",
+              "ru": "спортивный",
+              "pl": "sportowy"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "spotted",
+              "uk": "у горошок",
+              "ru": "в горошек",
+              "pl": "w kropki"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "striped",
+              "uk": "у смужку",
+              "ru": "в полоску",
+              "pl": "w paski"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "suit",
+              "uk": "пасувати",
+              "ru": "подходить",
+              "pl": "pasować"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "well-dressed",
+              "uk": "добре одягнений",
+              "ru": "хорошо одетый",
+              "pl": "dobrze ubrany"
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "key": "personal_items",
+        "title": {
+          "en": "Personal items",
+          "uk": "Особисті речі",
+          "ru": "Личные вещи",
+          "pl": "Rzeczy osobiste"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "glasses",
+              "uk": "окуляри",
+              "ru": "очки",
+              "pl": "okulary"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "handbag",
+              "uk": "сумочка",
+              "ru": "сумочка",
+              "pl": "torebka"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "keys",
+              "uk": "ключі",
+              "ru": "ключи",
+              "pl": "klucze"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "purse",
+              "uk": "гаманець",
+              "ru": "кошелёк",
+              "pl": "portmonetka"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "rucksack",
+              "uk": "рюкзак",
+              "ru": "рюкзак",
+              "pl": "plecak"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "smartphone/mobile phone",
+              "uk": "смартфон/мобільний телефон",
+              "ru": "смартфон/мобильный телефон",
+              "pl": "smartfon/telefon komórkowy"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "smartwatch",
+              "uk": "смартгодинник",
+              "ru": "смарт-часы",
+              "pl": "smartwatch"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "sunglasses",
+              "uk": "сонцезахисні окуляри",
+              "ru": "солнцезащитные очки",
+              "pl": "okulary przeciwsłoneczne"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "umbrella",
+              "uk": "парасоля",
+              "ru": "зонт",
+              "pl": "parasol"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "wallet",
+              "uk": "гаманець",
+              "ru": "бумажник",
+              "pl": "portfel"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "watch",
+              "uk": "годинник",
+              "ru": "часы",
+              "pl": "zegarek"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "key": "traits_of_character",
+        "title": {
+          "en": "Traits of character",
+          "uk": "Риси характеру",
+          "ru": "Черты характера",
+          "pl": "Cechy charakteru"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "ambitious",
+              "uk": "амбітний",
+              "ru": "амбициозный",
+              "pl": "ambitny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "brave",
+              "uk": "сміливий",
+              "ru": "смелый",
+              "pl": "odważny"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "calm",
+              "uk": "спокійний",
+              "ru": "спокойный",
+              "pl": "spokojny"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "careful",
+              "uk": "обережний, уважний",
+              "ru": "осторожный, внимательный",
+              "pl": "ostrożny, uważny"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "cheerful",
+              "uk": "життєрадісний",
+              "ru": "жизнерадостный",
+              "pl": "radosny"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "clever",
+              "uk": "розумний",
+              "ru": "умный",
+              "pl": "inteligentny, mądry"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "creative",
+              "uk": "творчий",
+              "ru": "творческий",
+              "pl": "kreatywny"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "dishonest",
+              "uk": "нечесний",
+              "ru": "нечестный",
+              "pl": "nieuczciwy"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "easy-going",
+              "uk": "невимушений",
+              "ru": "непринуждённый",
+              "pl": "wyluzowany"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "funny",
+              "uk": "смішний",
+              "ru": "смешной",
+              "pl": "zabawny"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "generous",
+              "uk": "щедрий",
+              "ru": "щедрый",
+              "pl": "hojny"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "hard-working",
+              "uk": "працьовитий",
+              "ru": "трудолюбивый",
+              "pl": "pracowity"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "honest",
+              "uk": "чесний",
+              "ru": "честный",
+              "pl": "uczciwy"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "impatient",
+              "uk": "нетерплячий",
+              "ru": "нетерпеливый",
+              "pl": "niecierpliwy"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "irresponsible",
+              "uk": "безвідповідальний",
+              "ru": "безответственный",
+              "pl": "nieodpowiedzialny"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "jealous",
+              "uk": "ревнивий, заздрісний",
+              "ru": "ревнивый, завистливый",
+              "pl": "zazdrosny"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "lazy",
+              "uk": "ледачий",
+              "ru": "ленивый",
+              "pl": "leniwy"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "lively",
+              "uk": "жвавий",
+              "ru": "живой",
+              "pl": "żywiołowy"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "lovely",
+              "uk": "чудовий",
+              "ru": "чудесный",
+              "pl": "cudowny"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "messy",
+              "uk": "неохайний",
+              "ru": "неопрятный",
+              "pl": "bałaganiarski"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "negative",
+              "uk": "негативний",
+              "ru": "негативный",
+              "pl": "negatywny"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "noisy",
+              "uk": "галасливий",
+              "ru": "шумный",
+              "pl": "hałaśliwy"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "patient",
+              "uk": "терплячий",
+              "ru": "терпеливый",
+              "pl": "cierpliwy"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "positive",
+              "uk": "позитивний",
+              "ru": "позитивный",
+              "pl": "pozytywny"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "proud",
+              "uk": "гордий",
+              "ru": "гордый",
+              "pl": "dumny"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "punctual",
+              "uk": "пунктуальний",
+              "ru": "пунктуальный",
+              "pl": "punktualny"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "quiet",
+              "uk": "тихий",
+              "ru": "тихий",
+              "pl": "cichy"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "reliable",
+              "uk": "надійний",
+              "ru": "надёжный",
+              "pl": "rzetelny"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "responsible",
+              "uk": "відповідальний",
+              "ru": "ответственный",
+              "pl": "odpowiedzialny"
+            }
+          },
+          {
+            "id": 30,
+            "translations": {
+              "en": "rude",
+              "uk": "грубий, нахабний",
+              "ru": "грубый, наглый",
+              "pl": "niegrzeczny, bezczelny"
+            }
+          },
+          {
+            "id": 31,
+            "translations": {
+              "en": "self-confident",
+              "uk": "впевнений у собі",
+              "ru": "уверенный в себе",
+              "pl": "pewny siebie"
+            }
+          },
+          {
+            "id": 32,
+            "translations": {
+              "en": "selfish",
+              "uk": "егоїстичний",
+              "ru": "эгоистичный",
+              "pl": "samolubny"
+            }
+          },
+          {
+            "id": 33,
+            "translations": {
+              "en": "sensible",
+              "uk": "розсудливий",
+              "ru": "рассудительный",
+              "pl": "rozsądny"
+            }
+          },
+          {
+            "id": 34,
+            "translations": {
+              "en": "serious",
+              "uk": "серйозний",
+              "ru": "серьёзный",
+              "pl": "poważny"
+            }
+          },
+          {
+            "id": 35,
+            "translations": {
+              "en": "shy",
+              "uk": "сором'язливий",
+              "ru": "застенчивый",
+              "pl": "nieśmiały"
+            }
+          },
+          {
+            "id": 36,
+            "translations": {
+              "en": "smart",
+              "uk": "кмітливий, розумний",
+              "ru": "сообразительный, умный",
+              "pl": "sprytny, inteligentny"
+            }
+          },
+          {
+            "id": 37,
+            "translations": {
+              "en": "sociable",
+              "uk": "товариський",
+              "ru": "общительный",
+              "pl": "towarzyski"
+            }
+          },
+          {
+            "id": 38,
+            "translations": {
+              "en": "stupid",
+              "uk": "дурний",
+              "ru": "глупый",
+              "pl": "głupi"
+            }
+          },
+          {
+            "id": 39,
+            "translations": {
+              "en": "unpunctual",
+              "uk": "непунктуальний",
+              "ru": "непунктуальный",
+              "pl": "niepunktualny"
+            }
+          },
+          {
+            "id": 40,
+            "translations": {
+              "en": "unreliable",
+              "uk": "ненадійний",
+              "ru": "ненадёжный",
+              "pl": "nierzetelny"
+            }
+          },
+          {
+            "id": 41,
+            "translations": {
+              "en": "unsociable",
+              "uk": "нетовариський",
+              "ru": "необщительный",
+              "pl": "nietowarzyski"
+            }
+          },
+          {
+            "id": 42,
+            "translations": {
+              "en": "impatient",
+              "uk": "нетерплячий",
+              "ru": "нетерпеливый",
+              "pl": "niecierpliwy"
+            }
+          },
+          {
+            "id": 43,
+            "translations": {
+              "en": "intolerant",
+              "uk": "нетерпимий",
+              "ru": "нетерпимый",
+              "pl": "nietolerancyjny"
+            }
+          },
+          {
+            "id": 44,
+            "translations": {
+              "en": "lazy",
+              "uk": "ледачий",
+              "ru": "ленивый",
+              "pl": "leniwy"
+            }
+          },
+          {
+            "id": 45,
+            "translations": {
+              "en": "patient",
+              "uk": "терплячий",
+              "ru": "терпеливый",
+              "pl": "cierpliwy"
+            }
+          },
+          {
+            "id": 46,
+            "translations": {
+              "en": "strict",
+              "uk": "суворий",
+              "ru": "строгий",
+              "pl": "surowy"
+            }
+          },
+          {
+            "id": 47,
+            "translations": {
+              "en": "tolerant",
+              "uk": "толерантний",
+              "ru": "терпимый",
+              "pl": "tolerancyjny"
+            }
+          },
+          {
+            "id": 48,
+            "translations": {
+              "en": "unambitious",
+              "uk": "неамбітний",
+              "ru": "неамбициозный",
+              "pl": "mało ambitny"
+            }
+          },
+          {
+            "id": 49,
+            "translations": {
+              "en": "unfair",
+              "uk": "несправедливий",
+              "ru": "несправедливый",
+              "pl": "niesprawiedliwy"
+            }
+          },
+          {
+            "id": 50,
+            "translations": {
+              "en": "unfriendly",
+              "uk": "недружній",
+              "ru": "недружелюбный",
+              "pl": "nieprzyjazny"
+            }
+          },
+          {
+            "id": 51,
+            "translations": {
+              "en": "unhelpful",
+              "uk": "не готовий допомагати",
+              "ru": "неотзывчивый",
+              "pl": "mało pomocny"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "key": "feelings_and_emotions",
+        "title": {
+          "en": "Feelings and emotions",
+          "uk": "Почуття та емоції",
+          "ru": "Чувства и эмоции",
+          "pl": "Uczucia i emocje"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "angry",
+              "uk": "злий, розгніваний",
+              "ru": "злой, рассерженный",
+              "pl": "zły, rozłoszczony"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "bored",
+              "uk": "нудьгуючий",
+              "ru": "скучающий",
+              "pl": "znudzony"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "disappointed",
+              "uk": "розчарований",
+              "ru": "разочарованный",
+              "pl": "rozczarowany"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "embarrassed",
+              "uk": "збентежений",
+              "ru": "смущённый",
+              "pl": "zakłopotany"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "excited",
+              "uk": "схвильований",
+              "ru": "взволнованный",
+              "pl": "przejęty"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "lonely",
+              "uk": "самотній",
+              "ru": "одинокий",
+              "pl": "samotny"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "nervous",
+              "uk": "нервовий",
+              "ru": "нервный",
+              "pl": "zdenerwowany, nerwowy"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "relaxed",
+              "uk": "розслаблений",
+              "ru": "расслабленный",
+              "pl": "zrelaksowany"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "sad",
+              "uk": "сумний",
+              "ru": "грустный",
+              "pl": "smutny"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "scared",
+              "uk": "наляканий",
+              "ru": "испуганный",
+              "pl": "przestraszony"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "shocked",
+              "uk": "шокований",
+              "ru": "шокированный",
+              "pl": "zszokowany"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "stressed",
+              "uk": "у стресі",
+              "ru": "в стрессе",
+              "pl": "zestresowany"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "surprised",
+              "uk": "здивований",
+              "ru": "удивлённый",
+              "pl": "zdziwiony, zaskoczony"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "tired",
+              "uk": "втомлений",
+              "ru": "уставший",
+              "pl": "zmęczony"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "worried",
+              "uk": "стурбований",
+              "ru": "обеспокоенный",
+              "pl": "zmartwiony"
+            }
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "key": "abilities_and_interests",
+        "title": {
+          "en": "Abilities and interests",
+          "uk": "Уміння та інтереси",
+          "ru": "Умения и интересы",
+          "pl": "Umiejętności i zainteresowania"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "baking",
+              "uk": "випікання",
+              "ru": "выпечка",
+              "pl": "pieczenie"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "collecting cards/comics",
+              "uk": "колекціонування карток/коміксів",
+              "ru": "коллекционирование карточек/комиксов",
+              "pl": "zbieranie kart/komiksów"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "dancing",
+              "uk": "танці",
+              "ru": "танцы",
+              "pl": "taniec"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "doing/playing sport",
+              "uk": "заняття спортом",
+              "ru": "занятия спортом",
+              "pl": "uprawianie sportu"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "hiking",
+              "uk": "піші походи",
+              "ru": "пешие походы",
+              "pl": "piesze wycieczki"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "learning Spanish/German",
+              "uk": "вивчення іспанської/німецької",
+              "ru": "изучение испанского/немецкого",
+              "pl": "nauka hiszpańskiego/niemieckiego"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "making videos/jewellery",
+              "uk": "створення відео/прикрас",
+              "ru": "создание видео/украшений",
+              "pl": "tworzenie filmów/biżuterii"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "mountain biking",
+              "uk": "катання на гірському велосипеді",
+              "ru": "катание на горном велосипеде",
+              "pl": "jazda rowerem górskim"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "painting",
+              "uk": "малювання",
+              "ru": "рисование",
+              "pl": "malowanie"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "playing a musical instrument/the guitar",
+              "uk": "гра на музичному інструменті/гітарі",
+              "ru": "игра на музыкальном инструменте/гитаре",
+              "pl": "gra na instrumencie muzycznym/gitarze"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "playing chess/computer games",
+              "uk": "гра в шахи/комп'ютерні ігри",
+              "ru": "игра в шахматы/компьютерные игры",
+              "pl": "granie w szachy/gry komputerowe"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "reading books",
+              "uk": "читання книжок",
+              "ru": "чтение книг",
+              "pl": "czytanie książek"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "rock climbing",
+              "uk": "скелелазіння",
+              "ru": "скалолазание",
+              "pl": "wspinaczka skałkowa"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "rollerblading",
+              "uk": "катання на роликах",
+              "ru": "катание на роликах",
+              "pl": "jazda na łyżworolkach"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "skateboarding",
+              "uk": "катання на скейтборді",
+              "ru": "катание на скейтборде",
+              "pl": "jazda na deskorolce"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "taking photos",
+              "uk": "фотографування",
+              "ru": "фотографирование",
+              "pl": "fotografia, robienie zdjęć"
+            }
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "key": "verbs_and_collocations",
+        "title": {
+          "en": "Verbs and collocations",
+          "uk": "Дієслова та словосполучення",
+          "ru": "Глаголы и словосочетания",
+          "pl": "Czasowniki i wyrażenia"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "be a big fan of (basketball)",
+              "uk": "бути великим шанувальником (баскетболу)",
+              "ru": "быть большим поклонником (баскетбола)",
+              "pl": "być wielbicielem (koszykówki)"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "be good/bad at (maths)",
+              "uk": "добре/погано знати (математику)",
+              "ru": "быть сильным/слабым в (математике)",
+              "pl": "być dobrym/kiepskim z (matematyki)"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "be interested in/keen on (history)",
+              "uk": "цікавитися (історією)",
+              "ru": "интересоваться (историей)",
+              "pl": "interesować się (historią)"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "go out (with friends)",
+              "uk": "виходити гуляти (з друзями)",
+              "ru": "выходить гулять (с друзьями)",
+              "pl": "wychodzić (z przyjaciółmi)"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "hate",
+              "uk": "ненавидіти",
+              "ru": "ненавидеть",
+              "pl": "nienawidzić"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "have a great sense of humour",
+              "uk": "мати чудове почуття гумору",
+              "ru": "иметь отличное чувство юмора",
+              "pl": "mieć świetne poczucie humoru"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "like/enjoy",
+              "uk": "любити, отримувати задоволення",
+              "ru": "любить, получать удовольствие",
+              "pl": "lubić"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "love",
+              "uk": "обожнювати, кохати",
+              "ru": "обожать, любить",
+              "pl": "uwielbiać, kochać"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "prefer",
+              "uk": "віддавати перевагу",
+              "ru": "предпочитать",
+              "pl": "woleć"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "spend time alone/with friends",
+              "uk": "проводити час наодинці/з друзями",
+              "ru": "проводить время одному/с друзьями",
+              "pl": "spędzać czas samemu/z przyjaciółmi"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "take part in",
+              "uk": "брати участь у",
+              "ru": "принимать участие в",
+              "pl": "brać udział w"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "wear clothes",
+              "uk": "носити одяг",
+              "ru": "носить одежду",
+              "pl": "nosić ubrania"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

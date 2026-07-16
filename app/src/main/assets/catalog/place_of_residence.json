@@ -1,0 +1,1899 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "id": 2,
+    "key": "place_of_residence",
+    "title": {
+      "en": "Place of residence",
+      "uk": "Місце проживання",
+      "ru": "Место жительства",
+      "pl": "Miejsce zamieszkania"
+    },
+    "subtopics": [
+      {
+        "id": 1,
+        "key": "in_the_countryside",
+        "title": {
+          "en": "In the countryside",
+          "uk": "У сільській місцевості",
+          "ru": "В сельской местности",
+          "pl": "Tereny wiejskie"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "farm",
+              "uk": "ферма, господарство",
+              "ru": "ферма, хозяйство",
+              "pl": "gospodarstwo"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "farm animals",
+              "uk": "свійські тварини",
+              "ru": "сельскохозяйственные животные",
+              "pl": "zwierzęta gospodarskie"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "field",
+              "uk": "поле",
+              "ru": "поле",
+              "pl": "pole"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "forest",
+              "uk": "ліс",
+              "ru": "лес",
+              "pl": "las"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "garden",
+              "uk": "сад",
+              "ru": "сад",
+              "pl": "ogród"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "hill",
+              "uk": "пагорб",
+              "ru": "холм",
+              "pl": "wzgórze"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "lake",
+              "uk": "озеро",
+              "ru": "озеро",
+              "pl": "jezioro"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "meadow",
+              "uk": "луг",
+              "ru": "луг",
+              "pl": "łąka"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "mountain",
+              "uk": "гора",
+              "ru": "гора",
+              "pl": "góra"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "plant",
+              "uk": "рослина",
+              "ru": "растение",
+              "pl": "roślina"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "river",
+              "uk": "річка",
+              "ru": "река",
+              "pl": "rzeka"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "road",
+              "uk": "дорога, шосе",
+              "ru": "дорога, шоссе",
+              "pl": "droga, szosa"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "tree",
+              "uk": "дерево",
+              "ru": "дерево",
+              "pl": "drzewo"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "valley",
+              "uk": "долина",
+              "ru": "долина",
+              "pl": "dolina"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "village",
+              "uk": "село",
+              "ru": "деревня",
+              "pl": "wioska"
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "key": "in_the_city",
+        "title": {
+          "en": "In the city",
+          "uk": "У місті",
+          "ru": "В городе",
+          "pl": "Miasto"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "bench",
+              "uk": "лавка",
+              "ru": "скамейка",
+              "pl": "ławka"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "bridge",
+              "uk": "міст",
+              "ru": "мост",
+              "pl": "most"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "capital (city)",
+              "uk": "столиця",
+              "ru": "столица",
+              "pl": "stolica"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "car park",
+              "uk": "паркінг",
+              "ru": "парковка",
+              "pl": "parking"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "cash machine",
+              "uk": "банкомат",
+              "ru": "банкомат",
+              "pl": "bankomat"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "cycle path",
+              "uk": "велодоріжка",
+              "ru": "велодорожка",
+              "pl": "ścieżka rowerowa"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "district",
+              "uk": "район",
+              "ru": "район",
+              "pl": "dzielnica"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "fountain",
+              "uk": "фонтан",
+              "ru": "фонтан",
+              "pl": "fontanna"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "main street",
+              "uk": "головна вулиця",
+              "ru": "главная улица",
+              "pl": "główna ulica"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "monument",
+              "uk": "пам'ятка",
+              "ru": "достопримечательность",
+              "pl": "zabytek"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "neighbourhood",
+              "uk": "сусідство, околиці",
+              "ru": "соседство, окрестности",
+              "pl": "sąsiedztwo, najbliższa okolica"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "pavement",
+              "uk": "тротуар",
+              "ru": "тротуар",
+              "pl": "chodnik"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "pedestrian crossing",
+              "uk": "пішохідний перехід",
+              "ru": "пешеходный переход",
+              "pl": "przejście dla pieszych"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "playground",
+              "uk": "дитячий майданчик",
+              "ru": "детская площадка",
+              "pl": "plac zabaw"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "rubbish bin",
+              "uk": "смітник",
+              "ru": "мусорная урна",
+              "pl": "kosz na śmieci"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "square",
+              "uk": "площа",
+              "ru": "площадь",
+              "pl": "plac"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "street light",
+              "uk": "вуличний ліхтар",
+              "ru": "уличный фонарь",
+              "pl": "latarnia uliczna"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "street sign",
+              "uk": "дорожній знак",
+              "ru": "дорожный знак",
+              "pl": "znak drogowy"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "traffic",
+              "uk": "дорожній рух",
+              "ru": "дорожное движение",
+              "pl": "ruch uliczny"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "traffic jam",
+              "uk": "затор",
+              "ru": "пробка",
+              "pl": "korek uliczny"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "traffic lights",
+              "uk": "світлофор",
+              "ru": "светофор",
+              "pl": "sygnalizacja świetlna"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "key": "buildings_and_places",
+        "title": {
+          "en": "Buildings and places",
+          "uk": "Будівлі та місця",
+          "ru": "Здания и места",
+          "pl": "Budynki i miejsca"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "airport",
+              "uk": "аеропорт",
+              "ru": "аэропорт",
+              "pl": "lotnisko"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "bank",
+              "uk": "банк",
+              "ru": "банк",
+              "pl": "bank"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "bus station",
+              "uk": "автовокзал",
+              "ru": "автовокзал",
+              "pl": "dworzec autobusowy"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "bus/tram stop",
+              "uk": "автобусна/трамвайна зупинка",
+              "ru": "автобусная/трамвайная остановка",
+              "pl": "przystanek autobusowy/tramwajowy"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "café",
+              "uk": "кав'ярня",
+              "ru": "кафе",
+              "pl": "kawiarnia"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "cathedral",
+              "uk": "собор",
+              "ru": "собор",
+              "pl": "katedra"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "church",
+              "uk": "церква",
+              "ru": "церковь",
+              "pl": "kościół"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "cinema",
+              "uk": "кінотеатр",
+              "ru": "кинотеатр",
+              "pl": "kino"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "city centre",
+              "uk": "центр міста",
+              "ru": "центр города",
+              "pl": "centrum miasta"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "factory",
+              "uk": "фабрика",
+              "ru": "фабрика",
+              "pl": "fabryka"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "fire station",
+              "uk": "пожежна частина",
+              "ru": "пожарная часть",
+              "pl": "remiza strażacka"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "harbour",
+              "uk": "порт",
+              "ru": "порт",
+              "pl": "port"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "hospital",
+              "uk": "лікарня",
+              "ru": "больница",
+              "pl": "szpital"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "library",
+              "uk": "бібліотека",
+              "ru": "библиотека",
+              "pl": "biblioteka"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "market",
+              "uk": "ринок",
+              "ru": "рынок",
+              "pl": "targ"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "medical centre",
+              "uk": "поліклініка",
+              "ru": "поликлиника",
+              "pl": "przychodnia"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "museum",
+              "uk": "музей",
+              "ru": "музей",
+              "pl": "muzeum"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "office building",
+              "uk": "офісна будівля",
+              "ru": "офисное здание",
+              "pl": "biurowiec"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "park",
+              "uk": "парк",
+              "ru": "парк",
+              "pl": "park"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "petrol station",
+              "uk": "заправна станція",
+              "ru": "автозаправочная станция",
+              "pl": "stacja benzynowa"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "police station",
+              "uk": "поліцейська дільниця",
+              "ru": "полицейский участок",
+              "pl": "posterunek policji"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "restaurant",
+              "uk": "ресторан",
+              "ru": "ресторан",
+              "pl": "restauracja"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "school",
+              "uk": "школа",
+              "ru": "школа",
+              "pl": "szkoła"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "shop",
+              "uk": "магазин",
+              "ru": "магазин",
+              "pl": "sklep"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "theatre",
+              "uk": "театр",
+              "ru": "театр",
+              "pl": "teatr"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "tourist information centre",
+              "uk": "туристичний інформаційний центр",
+              "ru": "туристический информационный центр",
+              "pl": "biuro informacji turystycznej"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "town hall",
+              "uk": "ратуша",
+              "ru": "ратуша",
+              "pl": "ratusz"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "train station",
+              "uk": "залізничний вокзал",
+              "ru": "железнодорожный вокзал",
+              "pl": "dworzec kolejowy"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "underground/metro station",
+              "uk": "станція метро",
+              "ru": "станция метро",
+              "pl": "stacja metra"
+            }
+          },
+          {
+            "id": 30,
+            "translations": {
+              "en": "university",
+              "uk": "університет",
+              "ru": "университет",
+              "pl": "uniwersytet"
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "key": "types_of_houses",
+        "title": {
+          "en": "Types of houses",
+          "uk": "Типи будинків",
+          "ru": "Типы домов",
+          "pl": "Rodzaje domów"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "block of flats",
+              "uk": "багатоквартирний будинок",
+              "ru": "многоквартирный дом",
+              "pl": "blok mieszkalny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "building",
+              "uk": "будівля",
+              "ru": "здание",
+              "pl": "budynek"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "castle",
+              "uk": "замок",
+              "ru": "замок",
+              "pl": "zamek"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "cottage",
+              "uk": "котедж, сільський будинок",
+              "ru": "коттедж, деревенский дом",
+              "pl": "chata, domek wiejski"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "flat/apartment",
+              "uk": "квартира",
+              "ru": "квартира",
+              "pl": "mieszkanie"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "house",
+              "uk": "будинок",
+              "ru": "дом",
+              "pl": "dom"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "palace",
+              "uk": "палац",
+              "ru": "дворец",
+              "pl": "pałac"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "villa",
+              "uk": "вілла, великий будинок для відпочинку",
+              "ru": "вилла, большой дом для отдыха",
+              "pl": "willa, duży wakacyjny dom"
+            }
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "key": "people_around",
+        "title": {
+          "en": "People around",
+          "uk": "Люди навколо",
+          "ru": "Люди вокруг",
+          "pl": "Ludzie w najbliższym otoczeniu"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "bus/taxi driver",
+              "uk": "водій автобуса/таксі",
+              "ru": "водитель автобуса/такси",
+              "pl": "kierowca autobusu/taksówki"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "flatmate",
+              "uk": "сусід по квартирі",
+              "ru": "сосед по квартире",
+              "pl": "współlokator"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "neighbour",
+              "uk": "сусід",
+              "ru": "сосед",
+              "pl": "sąsiad"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "owner",
+              "uk": "власник",
+              "ru": "владелец",
+              "pl": "właściciel"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "pedestrian",
+              "uk": "пішохід",
+              "ru": "пешеход",
+              "pl": "pieszy"
+            }
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "key": "rooms_and_parts_of_the_house",
+        "title": {
+          "en": "Rooms and parts of the house",
+          "uk": "Кімнати та частини будинку",
+          "ru": "Комнаты и части дома",
+          "pl": "Części domu i pomieszczenia"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "attic",
+              "uk": "горище",
+              "ru": "чердак",
+              "pl": "poddasze"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "balcony",
+              "uk": "балкон",
+              "ru": "балкон",
+              "pl": "balkon"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "bathroom",
+              "uk": "ванна кімната",
+              "ru": "ванная",
+              "pl": "łazienka"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "bedroom",
+              "uk": "спальня",
+              "ru": "спальня",
+              "pl": "sypialnia"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "ceiling",
+              "uk": "стеля",
+              "ru": "потолок",
+              "pl": "sufit"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "dining room",
+              "uk": "їдальня",
+              "ru": "столовая",
+              "pl": "jadalnia"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "door",
+              "uk": "двері",
+              "ru": "дверь",
+              "pl": "drzwi"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "drive",
+              "uk": "під'їзна доріжка",
+              "ru": "подъездная дорожка",
+              "pl": "podjazd"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "floor",
+              "uk": "підлога, поверх",
+              "ru": "пол, этаж",
+              "pl": "podłoga, piętro"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "front door",
+              "uk": "вхідні двері",
+              "ru": "входная дверь",
+              "pl": "drzwi wejściowe"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "garage",
+              "uk": "гараж",
+              "ru": "гараж",
+              "pl": "garaż"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "gate",
+              "uk": "ворота",
+              "ru": "ворота",
+              "pl": "brama"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "hall",
+              "uk": "передпокій, коридор",
+              "ru": "прихожая, коридор",
+              "pl": "przedpokój, korytarz"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "kitchen",
+              "uk": "кухня",
+              "ru": "кухня",
+              "pl": "kuchnia"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "lift",
+              "uk": "ліфт",
+              "ru": "лифт",
+              "pl": "winda"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "living room",
+              "uk": "вітальня",
+              "ru": "гостиная",
+              "pl": "salon"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "roof",
+              "uk": "дах",
+              "ru": "крыша",
+              "pl": "dach"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "stairs",
+              "uk": "сходи",
+              "ru": "лестница",
+              "pl": "schody"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "study",
+              "uk": "кабінет",
+              "ru": "кабинет",
+              "pl": "gabinet"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "toilet",
+              "uk": "туалет",
+              "ru": "туалет",
+              "pl": "toaleta"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "wall",
+              "uk": "стіна",
+              "ru": "стена",
+              "pl": "ściana"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "window",
+              "uk": "вікно",
+              "ru": "окно",
+              "pl": "okno"
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "key": "describing_places_and_rooms",
+        "title": {
+          "en": "Describing places and rooms",
+          "uk": "Опис місць і кімнат",
+          "ru": "Описание мест и комнат",
+          "pl": "Opisywanie miejsc i pomieszczeń"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "busy",
+              "uk": "жвавий, людний",
+              "ru": "оживлённый, многолюдный",
+              "pl": "ruchliwy, zatłoczony"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "clean",
+              "uk": "чистий",
+              "ru": "чистый",
+              "pl": "czysty"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "comfortable",
+              "uk": "зручний",
+              "ru": "удобный",
+              "pl": "wygodny"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "cosy",
+              "uk": "затишний",
+              "ru": "уютный",
+              "pl": "przytulny"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "dangerous",
+              "uk": "небезпечний",
+              "ru": "опасный",
+              "pl": "niebezpieczny"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "dirty",
+              "uk": "брудний",
+              "ru": "грязный",
+              "pl": "brudny"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "large",
+              "uk": "великий",
+              "ru": "большой",
+              "pl": "duży"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "lively",
+              "uk": "жвавий",
+              "ru": "оживлённый",
+              "pl": "tętniący życiem"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "messy",
+              "uk": "захаращений",
+              "ru": "захламлённый",
+              "pl": "zabałaganiony"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "modern",
+              "uk": "сучасний",
+              "ru": "современный",
+              "pl": "nowoczesny"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "noisy",
+              "uk": "галасливий",
+              "ru": "шумный",
+              "pl": "głośny, hałaśliwy"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "old-fashioned",
+              "uk": "старомодний",
+              "ru": "старомодный",
+              "pl": "staroświecki"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "original",
+              "uk": "оригінальний",
+              "ru": "оригинальный",
+              "pl": "oryginalny"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "peaceful",
+              "uk": "спокійний",
+              "ru": "спокойный",
+              "pl": "spokojny"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "safe",
+              "uk": "безпечний",
+              "ru": "безопасный",
+              "pl": "bezpieczny"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "tidy",
+              "uk": "охайний",
+              "ru": "аккуратный",
+              "pl": "uporządkowany"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "tiny",
+              "uk": "крихітний",
+              "ru": "крошечный",
+              "pl": "maleńki"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "uncomfortable",
+              "uk": "незручний",
+              "ru": "неудобный",
+              "pl": "niewygodny"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "unusual",
+              "uk": "незвичайний",
+              "ru": "необычный",
+              "pl": "nietypowy"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "wooden",
+              "uk": "дерев'яний",
+              "ru": "деревянный",
+              "pl": "drewniany"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "key": "furniture_and_furnishings",
+        "title": {
+          "en": "Furniture and furnishings",
+          "uk": "Меблі та обладнання",
+          "ru": "Мебель и обстановка",
+          "pl": "Meble i wyposażenie domu"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "air-conditioning",
+              "uk": "кондиціонер",
+              "ru": "кондиционер",
+              "pl": "klimatyzacja"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "armchair",
+              "uk": "крісло",
+              "ru": "кресло",
+              "pl": "fotel"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "bath",
+              "uk": "ванна",
+              "ru": "ванна",
+              "pl": "wanna"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "bin",
+              "uk": "смітник",
+              "ru": "мусорное ведро",
+              "pl": "kosz na śmieci"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "blanket",
+              "uk": "ковдра",
+              "ru": "одеяло",
+              "pl": "koc"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "bookcase",
+              "uk": "книжкова шафа, стелаж",
+              "ru": "книжный шкаф, стеллаж",
+              "pl": "biblioteczka, regał na książki"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "bookshelf, bookshelves",
+              "uk": "книжкова полиця/полиці",
+              "ru": "книжная полка/полки",
+              "pl": "półka/półki na książki"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "carpet",
+              "uk": "килим",
+              "ru": "ковёр",
+              "pl": "dywan"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "central heating",
+              "uk": "центральне опалення",
+              "ru": "центральное отопление",
+              "pl": "centralne ogrzewanie"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "chest of drawers",
+              "uk": "комод",
+              "ru": "комод",
+              "pl": "komoda"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "cooker",
+              "uk": "плита",
+              "ru": "плита",
+              "pl": "kuchenka"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "cupboard",
+              "uk": "шафка",
+              "ru": "шкафчик",
+              "pl": "szafka"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "curtains",
+              "uk": "штори",
+              "ru": "шторы",
+              "pl": "zasłony"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "cushion",
+              "uk": "декоративна подушка",
+              "ru": "декоративная подушка",
+              "pl": "poduszka dekoracyjna"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "dishwasher",
+              "uk": "посудомийна машина",
+              "ru": "посудомоечная машина",
+              "pl": "zmywarka"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "duvet",
+              "uk": "ковдра",
+              "ru": "одеяло",
+              "pl": "kołdra"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "electric heater",
+              "uk": "електричний обігрівач",
+              "ru": "электрический обогреватель",
+              "pl": "grzejnik elektryczny"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "electricity",
+              "uk": "електрика",
+              "ru": "электричество",
+              "pl": "prąd"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "freezer",
+              "uk": "морозильна камера",
+              "ru": "морозильник",
+              "pl": "zamrażarka"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "fridge",
+              "uk": "холодильник",
+              "ru": "холодильник",
+              "pl": "lodówka"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "hair dryer",
+              "uk": "фен",
+              "ru": "фен",
+              "pl": "suszarka do włosów"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "iron",
+              "uk": "праска",
+              "ru": "утюг",
+              "pl": "żelazko"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "kettle",
+              "uk": "чайник",
+              "ru": "чайник",
+              "pl": "czajnik"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "lamp",
+              "uk": "лампа",
+              "ru": "лампа",
+              "pl": "lampa"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "letter box",
+              "uk": "поштова скринька",
+              "ru": "почтовый ящик",
+              "pl": "skrzynka na listy"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "microwave",
+              "uk": "мікрохвильова піч",
+              "ru": "микроволновая печь",
+              "pl": "kuchenka mikrofalowa"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "mirror",
+              "uk": "дзеркало",
+              "ru": "зеркало",
+              "pl": "lustro"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "oven",
+              "uk": "духовка",
+              "ru": "духовка",
+              "pl": "piekarnik"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "picture",
+              "uk": "фотографія, картина",
+              "ru": "фотография, картина",
+              "pl": "zdjęcie, obraz"
+            }
+          },
+          {
+            "id": 30,
+            "translations": {
+              "en": "pillow",
+              "uk": "подушка",
+              "ru": "подушка",
+              "pl": "poduszka do spania"
+            }
+          },
+          {
+            "id": 31,
+            "translations": {
+              "en": "poster",
+              "uk": "плакат",
+              "ru": "плакат",
+              "pl": "plakat"
+            }
+          },
+          {
+            "id": 32,
+            "translations": {
+              "en": "rug",
+              "uk": "килимок",
+              "ru": "коврик",
+              "pl": "dywanik"
+            }
+          },
+          {
+            "id": 33,
+            "translations": {
+              "en": "shelf, shelves",
+              "uk": "полиця, полиці",
+              "ru": "полка, полки",
+              "pl": "półka, półki"
+            }
+          },
+          {
+            "id": 34,
+            "translations": {
+              "en": "shower",
+              "uk": "душ",
+              "ru": "душ",
+              "pl": "prysznic"
+            }
+          },
+          {
+            "id": 35,
+            "translations": {
+              "en": "sink",
+              "uk": "раковина",
+              "ru": "раковина",
+              "pl": "zlew"
+            }
+          },
+          {
+            "id": 36,
+            "translations": {
+              "en": "sofa/couch",
+              "uk": "диван",
+              "ru": "диван",
+              "pl": "sofa, kanapa"
+            }
+          },
+          {
+            "id": 37,
+            "translations": {
+              "en": "table",
+              "uk": "стіл",
+              "ru": "стол",
+              "pl": "stół"
+            }
+          },
+          {
+            "id": 38,
+            "translations": {
+              "en": "tablecloth",
+              "uk": "скатертина",
+              "ru": "скатерть",
+              "pl": "obrus"
+            }
+          },
+          {
+            "id": 39,
+            "translations": {
+              "en": "tap",
+              "uk": "кран",
+              "ru": "кран",
+              "pl": "kran"
+            }
+          },
+          {
+            "id": 40,
+            "translations": {
+              "en": "wardrobe",
+              "uk": "шафа для одягу",
+              "ru": "шкаф для одежды",
+              "pl": "szafa na ubrania"
+            }
+          },
+          {
+            "id": 41,
+            "translations": {
+              "en": "washbasin",
+              "uk": "умивальник",
+              "ru": "умывальник",
+              "pl": "umywalka"
+            }
+          },
+          {
+            "id": 42,
+            "translations": {
+              "en": "washing machine",
+              "uk": "пральна машина",
+              "ru": "стиральная машина",
+              "pl": "pralka"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "key": "housework",
+        "title": {
+          "en": "Housework",
+          "uk": "Домашня робота",
+          "ru": "Домашняя работа",
+          "pl": "Prace domowe"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "clean the room",
+              "uk": "прибрати кімнату",
+              "ru": "убрать комнату",
+              "pl": "posprzątać pokój"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "clear the table",
+              "uk": "прибрати зі столу",
+              "ru": "убрать со стола",
+              "pl": "posprzątać ze stołu"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "cook a meal",
+              "uk": "приготувати їжу",
+              "ru": "приготовить еду",
+              "pl": "ugotować posiłek"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "do the ironing",
+              "uk": "прасувати",
+              "ru": "гладить",
+              "pl": "prasować"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "do the shopping",
+              "uk": "зробити покупки",
+              "ru": "сделать покупки",
+              "pl": "zrobić zakupy"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "do the washing",
+              "uk": "випрати",
+              "ru": "постирать",
+              "pl": "zrobić pranie"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "do the washing up",
+              "uk": "помити посуд",
+              "ru": "помыть посуду",
+              "pl": "pozmywać naczynia"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "dry the dishes",
+              "uk": "витерти посуд",
+              "ru": "вытереть посуду",
+              "pl": "wytrzeć naczynia"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "dust",
+              "uk": "витирати пил",
+              "ru": "вытирать пыль",
+              "pl": "ścierać kurz"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "feed the pets",
+              "uk": "нагодувати домашніх тварин",
+              "ru": "накормить домашних животных",
+              "pl": "nakarmić domowe zwierzęta"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "load the dishwasher",
+              "uk": "завантажити посудомийну машину",
+              "ru": "загрузить посудомоечную машину",
+              "pl": "załadować zmywarkę"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "put away clothes",
+              "uk": "прибрати одяг",
+              "ru": "убрать одежду",
+              "pl": "schować ubrania (np. do szafy)"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "set/lay the table",
+              "uk": "накрити на стіл",
+              "ru": "накрыть на стол",
+              "pl": "nakryć do stołu"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "throw out the rubbish",
+              "uk": "винести сміття",
+              "ru": "выбросить мусор",
+              "pl": "wyrzucić śmieci"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "tidy up the room",
+              "uk": "прибрати кімнату",
+              "ru": "привести комнату в порядок",
+              "pl": "uporządkować pokój"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "vacuum the carpet",
+              "uk": "пропилососити килим",
+              "ru": "пропылесосить ковёр",
+              "pl": "odkurzyć dywan"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "water the plants",
+              "uk": "полити рослини",
+              "ru": "полить растения",
+              "pl": "podlać kwiaty"
+            }
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "key": "verbs_and_collocations",
+        "title": {
+          "en": "Verbs and collocations",
+          "uk": "Дієслова та словосполучення",
+          "ru": "Глаголы и словосочетания",
+          "pl": "Czasowniki i wyrażenia"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "at the seaside",
+              "uk": "на морі",
+              "ru": "у моря",
+              "pl": "nad morzem"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "be at home",
+              "uk": "бути вдома",
+              "ru": "быть дома",
+              "pl": "być w domu"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "by the lake/river",
+              "uk": "біля озера/річки",
+              "ru": "у озера/реки",
+              "pl": "nad jeziorem/rzeką"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "close to/near the beach",
+              "uk": "поруч із пляжем",
+              "ru": "рядом с пляжем",
+              "pl": "obok/w pobliżu plaży"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "come back home",
+              "uk": "повернутися додому",
+              "ru": "вернуться домой",
+              "pl": "wrócić do domu"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "far from the city centre",
+              "uk": "далеко від центру міста",
+              "ru": "далеко от центра города",
+              "pl": "daleko od centrum miasta"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "go home",
+              "uk": "йти додому",
+              "ru": "идти домой",
+              "pl": "iść do domu"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "in the mountains",
+              "uk": "у горах",
+              "ru": "в горах",
+              "pl": "w górach"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "let a flat",
+              "uk": "здавати квартиру",
+              "ru": "сдавать квартиру",
+              "pl": "wynajmować komuś mieszkanie"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "lock the door",
+              "uk": "замкнути двері",
+              "ru": "запереть дверь",
+              "pl": "zamknąć drzwi na klucz"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "move house",
+              "uk": "переїхати",
+              "ru": "переехать",
+              "pl": "przeprowadzić się"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "move in/out",
+              "uk": "в'їхати/виїхати",
+              "ru": "въехать/выехать",
+              "pl": "wprowadzić/wyprowadzić się"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "rent",
+              "uk": "орендувати",
+              "ru": "арендовать",
+              "pl": "wynajmować dla siebie"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "repair",
+              "uk": "ремонтувати",
+              "ru": "ремонтировать",
+              "pl": "naprawiać"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "share a room/a flat",
+              "uk": "ділити кімнату/квартиру",
+              "ru": "делить комнату/квартиру",
+              "pl": "współdzielić pokój/mieszkanie"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "stay at home",
+              "uk": "залишитися вдома",
+              "ru": "остаться дома",
+              "pl": "zostać w domu"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

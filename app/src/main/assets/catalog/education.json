@@ -1,0 +1,1413 @@
+{
+  "schemaVersion": 1,
+  "topic": {
+    "id": 3,
+    "key": "education",
+    "title": {
+      "en": "Education",
+      "uk": "Освіта",
+      "ru": "Образование",
+      "pl": "Edukacja"
+    },
+    "subtopics": [
+      {
+        "id": 1,
+        "key": "school",
+        "title": {
+          "en": "School",
+          "uk": "Школа",
+          "ru": "Школа",
+          "pl": "Szkoła"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "assembly hall",
+              "uk": "актова зала",
+              "ru": "актовый зал",
+              "pl": "aula"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "canteen",
+              "uk": "їдальня",
+              "ru": "столовая",
+              "pl": "stołówka"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "changing room",
+              "uk": "роздягальня",
+              "ru": "раздевалка",
+              "pl": "szatnia (zajęcia WF)"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "classroom",
+              "uk": "класна кімната",
+              "ru": "классная комната",
+              "pl": "sala lekcyjna"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "cloakroom",
+              "uk": "гардероб",
+              "ru": "гардероб",
+              "pl": "szatnia (na ubrania)"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "common room",
+              "uk": "кімната відпочинку",
+              "ru": "комната отдыха",
+              "pl": "świetlica"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "gym",
+              "uk": "спортивна зала",
+              "ru": "спортивный зал",
+              "pl": "sala gimnastyczna"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "kindergarten",
+              "uk": "дитячий садок",
+              "ru": "детский сад",
+              "pl": "przedszkole"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "lab",
+              "uk": "лабораторія",
+              "ru": "лаборатория",
+              "pl": "pracownia"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "library",
+              "uk": "бібліотека",
+              "ru": "библиотека",
+              "pl": "biblioteka"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "locker",
+              "uk": "шафка, що замикається",
+              "ru": "закрывающийся шкафчик",
+              "pl": "zamykana szafka (na rzeczy osobiste uczniów)"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "notice board",
+              "uk": "дошка оголошень",
+              "ru": "доска объявлений",
+              "pl": "tablica ogłoszeń"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "nursery school",
+              "uk": "ясла",
+              "ru": "ясли",
+              "pl": "żłobek"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "primary school",
+              "uk": "початкова школа",
+              "ru": "начальная школа",
+              "pl": "szkoła podstawowa"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "private school",
+              "uk": "приватна школа",
+              "ru": "частная школа",
+              "pl": "szkoła prywatna"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "public school",
+              "uk": "у Великій Британії: приватна школа",
+              "ru": "в Великобритании: частная школа",
+              "pl": "UK: szkoła prywatna"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "school office",
+              "uk": "шкільний секретаріат",
+              "ru": "школьный секретариат",
+              "pl": "sekretariat"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "school playground/sports field",
+              "uk": "шкільний спортивний майданчик",
+              "ru": "школьная спортивная площадка",
+              "pl": "boisko szkolne"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "secondary school/high school",
+              "uk": "середня школа",
+              "ru": "средняя школа",
+              "pl": "szkoła średnia"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "staff room",
+              "uk": "учительська",
+              "ru": "учительская",
+              "pl": "pokój nauczycielski"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "state school",
+              "uk": "державна школа",
+              "ru": "государственная школа",
+              "pl": "szkoła państwowa"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "technical college",
+              "uk": "технікум",
+              "ru": "техникум",
+              "pl": "technikum"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "tuck shop",
+              "uk": "шкільний кіоск",
+              "ru": "школьный киоск",
+              "pl": "sklepik szkolny"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "vocational school",
+              "uk": "професійне училище",
+              "ru": "профессиональное училище",
+              "pl": "szkoła zawodowa"
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "key": "in_school",
+        "title": {
+          "en": "In school",
+          "uk": "У школі",
+          "ru": "В школе",
+          "pl": "W szkole"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "after-school activities",
+              "uk": "позашкільні заняття",
+              "ru": "внешкольные занятия",
+              "pl": "zajęcia pozaszkolne, pozalekcyjne"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "bad/good behaviour",
+              "uk": "погана/гарна поведінка",
+              "ru": "плохое/хорошее поведение",
+              "pl": "złe/dobre zachowanie"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "bell",
+              "uk": "дзвінок",
+              "ru": "звонок",
+              "pl": "dzwonek"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "break",
+              "uk": "перерва",
+              "ru": "перемена",
+              "pl": "przerwa"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "class register",
+              "uk": "класний журнал",
+              "ru": "классный журнал",
+              "pl": "dziennik lekcyjny"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "coursebook",
+              "uk": "підручник",
+              "ru": "учебник",
+              "pl": "podręcznik"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "desk",
+              "uk": "парта, письмовий стіл",
+              "ru": "парта, письменный стол",
+              "pl": "ławka szkolna, biurko"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "explanation",
+              "uk": "пояснення",
+              "ru": "объяснение",
+              "pl": "wyjaśnienie"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "final test/exam",
+              "uk": "підсумковий тест/іспит",
+              "ru": "итоговый тест/экзамен",
+              "pl": "test/egzamin końcowy"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "free time",
+              "uk": "вільний час",
+              "ru": "свободное время",
+              "pl": "czas wolny"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "homework",
+              "uk": "домашнє завдання",
+              "ru": "домашнее задание",
+              "pl": "praca domowa"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "lunchtime",
+              "uk": "обідня перерва",
+              "ru": "обеденный перерыв",
+              "pl": "przerwa na drugie śniadanie"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "map",
+              "uk": "мапа",
+              "ru": "карта",
+              "pl": "mapa"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "mark/grade",
+              "uk": "оцінка",
+              "ru": "оценка",
+              "pl": "ocena"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "note from parents",
+              "uk": "записка від батьків",
+              "ru": "записка от родителей",
+              "pl": "usprawiedliwienie od rodziców"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "primary school-leaving exam",
+              "uk": "іспит після початкової школи",
+              "ru": "экзамен после начальной школы",
+              "pl": "egzamin ósmoklasisty"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "school fee",
+              "uk": "плата за навчання",
+              "ru": "плата за обучение",
+              "pl": "czesne, opłata za szkołę"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "school trip",
+              "uk": "шкільна екскурсія",
+              "ru": "школьная экскурсия",
+              "pl": "wycieczka szkolna"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "school uniform",
+              "uk": "шкільна форма",
+              "ru": "школьная форма",
+              "pl": "mundurek szkolny"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "secondary school-leaving exam",
+              "uk": "випускний іспит",
+              "ru": "выпускной экзамен",
+              "pl": "egzamin maturalny"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "short test",
+              "uk": "коротка контрольна",
+              "ru": "короткая контрольная",
+              "pl": "kartkówka"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "staff meeting",
+              "uk": "педагогічна рада",
+              "ru": "педагогический совет",
+              "pl": "rada pedagogiczna"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "student exchange",
+              "uk": "учнівський обмін",
+              "ru": "ученический обмен",
+              "pl": "wymiana uczniowska"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "subject",
+              "uk": "навчальний предмет",
+              "ru": "учебный предмет",
+              "pl": "przedmiot szkolny"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "summer/winter holidays",
+              "uk": "літні/зимові канікули",
+              "ru": "летние/зимние каникулы",
+              "pl": "wakacje/ferie"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "term",
+              "uk": "семестр",
+              "ru": "семестр",
+              "pl": "semestr"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "timetable",
+              "uk": "розклад уроків",
+              "ru": "расписание уроков",
+              "pl": "plan lekcji"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "whiteboard",
+              "uk": "дошка",
+              "ru": "доска",
+              "pl": "tablica"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "workbook",
+              "uk": "робочий зошит",
+              "ru": "рабочая тетрадь",
+              "pl": "zeszyt ćwiczeń"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "key": "school_subjects",
+        "title": {
+          "en": "School subjects",
+          "uk": "Шкільні предмети",
+          "ru": "Школьные предметы",
+          "pl": "Przedmioty nauczania"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "art",
+              "uk": "образотворче мистецтво",
+              "ru": "изобразительное искусство",
+              "pl": "plastyka"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "biology",
+              "uk": "біологія",
+              "ru": "биология",
+              "pl": "biologia"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "chemistry",
+              "uk": "хімія",
+              "ru": "химия",
+              "pl": "chemia"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "English",
+              "uk": "англійська мова",
+              "ru": "английский язык",
+              "pl": "język angielski"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "French",
+              "uk": "французька мова",
+              "ru": "французский язык",
+              "pl": "język francuski"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "geography",
+              "uk": "географія",
+              "ru": "география",
+              "pl": "geografia"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "German",
+              "uk": "німецька мова",
+              "ru": "немецкий язык",
+              "pl": "język niemiecki"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "history",
+              "uk": "історія",
+              "ru": "история",
+              "pl": "historia"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "IT/Computer Science",
+              "uk": "інформатика",
+              "ru": "информатика",
+              "pl": "informatyka"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "Italian",
+              "uk": "італійська мова",
+              "ru": "итальянский язык",
+              "pl": "włoski"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "maths",
+              "uk": "математика",
+              "ru": "математика",
+              "pl": "matematyka"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "music",
+              "uk": "музика",
+              "ru": "музыка",
+              "pl": "muzyka"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "PE",
+              "uk": "фізкультура",
+              "ru": "физкультура",
+              "pl": "WF"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "physics",
+              "uk": "фізика",
+              "ru": "физика",
+              "pl": "fizyka"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "Polish",
+              "uk": "польська мова",
+              "ru": "польский язык",
+              "pl": "język polski"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "RE",
+              "uk": "релігія",
+              "ru": "религия",
+              "pl": "religia"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "Spanish",
+              "uk": "іспанська мова",
+              "ru": "испанский язык",
+              "pl": "język hiszpański"
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "key": "school_supplies",
+        "title": {
+          "en": "School supplies",
+          "uk": "Шкільне приладдя",
+          "ru": "Школьные принадлежности",
+          "pl": "Przybory szkolne"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "coloured pencils",
+              "uk": "кольорові олівці",
+              "ru": "цветные карандаши",
+              "pl": "kredki"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "crayons",
+              "uk": "воскові олівці",
+              "ru": "восковые мелки",
+              "pl": "kredki świecowe"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "dictionary",
+              "uk": "словник",
+              "ru": "словарь",
+              "pl": "słownik"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "eraser",
+              "uk": "гумка",
+              "ru": "ластик",
+              "pl": "gumka do ścierania"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "glue",
+              "uk": "клей",
+              "ru": "клей",
+              "pl": "klej"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "highlighter",
+              "uk": "маркер-текстовиділювач",
+              "ru": "текстовыделитель",
+              "pl": "zakreślacz"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "lunchbox",
+              "uk": "ланчбокс",
+              "ru": "ланчбокс",
+              "pl": "pudełko na drugie śniadanie"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "marker",
+              "uk": "маркер",
+              "ru": "маркер",
+              "pl": "pisak"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "notebook",
+              "uk": "зошит, блокнот",
+              "ru": "тетрадь, блокнот",
+              "pl": "zeszyt, notatnik"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "paints",
+              "uk": "фарби",
+              "ru": "краски",
+              "pl": "farby"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "pencil case",
+              "uk": "пенал",
+              "ru": "пенал",
+              "pl": "piórnik"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "ruler",
+              "uk": "лінійка",
+              "ru": "линейка",
+              "pl": "linijka"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "schoolbag",
+              "uk": "шкільна сумка, рюкзак",
+              "ru": "школьная сумка, рюкзак",
+              "pl": "torba, plecak szkolny"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "scissors",
+              "uk": "ножиці",
+              "ru": "ножницы",
+              "pl": "nożyczki"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "sharpener",
+              "uk": "точилка",
+              "ru": "точилка",
+              "pl": "temperówka"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "sticky tape",
+              "uk": "клейка стрічка",
+              "ru": "клейкая лента",
+              "pl": "taśma klejąca"
+            }
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "key": "people_at_school",
+        "title": {
+          "en": "People at school",
+          "uk": "Люди в школі",
+          "ru": "Люди в школе",
+          "pl": "Osoby w szkole"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "caretaker",
+              "uk": "завгосп, сторож",
+              "ru": "завхоз, сторож",
+              "pl": "woźny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "classmate",
+              "uk": "однокласник/однокласниця",
+              "ru": "одноклассник/одноклассница",
+              "pl": "kolega/koleżanka z klasy"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "form teacher",
+              "uk": "класний керівник",
+              "ru": "классный руководитель",
+              "pl": "wychowawca"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "head teacher",
+              "uk": "директор школи",
+              "ru": "директор школы",
+              "pl": "dyrektor szkoły"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "librarian",
+              "uk": "бібліотекар",
+              "ru": "библиотекарь",
+              "pl": "bibliotekarz"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "pupil",
+              "uk": "учень початкової школи",
+              "ru": "ученик начальной школы",
+              "pl": "uczeń (szkoła podstawowa)"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "student",
+              "uk": "учень середньої школи, студент",
+              "ru": "ученик средней школы, студент",
+              "pl": "uczeń (zwykle szkoła średnia), student"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "teacher",
+              "uk": "учитель",
+              "ru": "учитель",
+              "pl": "nauczyciel"
+            }
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "key": "describing_people",
+        "title": {
+          "en": "Describing people",
+          "uk": "Опис людей",
+          "ru": "Описание людей",
+          "pl": "Opisywanie osób"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "ambitious",
+              "uk": "амбітний",
+              "ru": "амбициозный",
+              "pl": "ambitny"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "fair",
+              "uk": "справедливий",
+              "ru": "справедливый",
+              "pl": "sprawiedliwy"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "friendly",
+              "uk": "дружній",
+              "ru": "дружелюбный",
+              "pl": "przyjacielski"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "hard-working",
+              "uk": "працьовитий",
+              "ru": "трудолюбивый",
+              "pl": "pracowity"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "helpful",
+              "uk": "готовий допомогти",
+              "ru": "отзывчивый",
+              "pl": "pomocny"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "impatient",
+              "uk": "нетерплячий",
+              "ru": "нетерпеливый",
+              "pl": "niecierpliwy"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "intolerant",
+              "uk": "нетерпимий",
+              "ru": "нетерпимый",
+              "pl": "nietolerancyjny"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "lazy",
+              "uk": "ледачий",
+              "ru": "ленивый",
+              "pl": "leniwy"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "patient",
+              "uk": "терплячий",
+              "ru": "терпеливый",
+              "pl": "cierpliwy"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "strict",
+              "uk": "суворий",
+              "ru": "строгий",
+              "pl": "surowy"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "tolerant",
+              "uk": "толерантний",
+              "ru": "терпимый",
+              "pl": "tolerancyjny"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "unambitious",
+              "uk": "неамбітний",
+              "ru": "неамбициозный",
+              "pl": "mało ambitny"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "unfair",
+              "uk": "несправедливий",
+              "ru": "несправедливый",
+              "pl": "niesprawiedliwy"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "unfriendly",
+              "uk": "недружній",
+              "ru": "недружелюбный",
+              "pl": "nieprzyjazny"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "unhelpful",
+              "uk": "не готовий допомагати",
+              "ru": "неотзывчивый",
+              "pl": "mało pomocny"
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "key": "verbs_and_collocations",
+        "title": {
+          "en": "Verbs and collocations",
+          "uk": "Дієслова та словосполучення",
+          "ru": "Глаголы и словосочетания",
+          "pl": "Czasowniki i wyrażenia"
+        },
+        "words": [
+          {
+            "id": 1,
+            "translations": {
+              "en": "answer questions",
+              "uk": "відповідати на запитання",
+              "ru": "отвечать на вопросы",
+              "pl": "odpowiadać na pytania"
+            }
+          },
+          {
+            "id": 2,
+            "translations": {
+              "en": "ask questions",
+              "uk": "ставити запитання",
+              "ru": "задавать вопросы",
+              "pl": "zadawać pytania"
+            }
+          },
+          {
+            "id": 3,
+            "translations": {
+              "en": "attend school/lessons",
+              "uk": "відвідувати школу/уроки",
+              "ru": "посещать школу/уроки",
+              "pl": "uczęszczać, chodzić do szkoły/na lekcje"
+            }
+          },
+          {
+            "id": 4,
+            "translations": {
+              "en": "be absent from school",
+              "uk": "бути відсутнім у школі",
+              "ru": "отсутствовать в школе",
+              "pl": "być nieobecnym w szkole"
+            }
+          },
+          {
+            "id": 5,
+            "translations": {
+              "en": "be good/bad at English",
+              "uk": "добре/погано знати англійську",
+              "ru": "хорошо/плохо знать английский",
+              "pl": "dobrze/słabo radzić sobie z angielskim"
+            }
+          },
+          {
+            "id": 6,
+            "translations": {
+              "en": "be late for school",
+              "uk": "запізнюватися до школи",
+              "ru": "опаздывать в школу",
+              "pl": "spóźniać się do szkoły"
+            }
+          },
+          {
+            "id": 7,
+            "translations": {
+              "en": "be on time",
+              "uk": "бути вчасно",
+              "ru": "быть вовремя",
+              "pl": "być na czas"
+            }
+          },
+          {
+            "id": 8,
+            "translations": {
+              "en": "carry out/do an experiment",
+              "uk": "проводити експеримент",
+              "ru": "проводить эксперимент",
+              "pl": "przeprowadzać eksperyment"
+            }
+          },
+          {
+            "id": 9,
+            "translations": {
+              "en": "catch up (in chemistry)",
+              "uk": "наздогнати матеріал (з хімії)",
+              "ru": "наверстать материал (по химии)",
+              "pl": "nadrobić materiał (z chemii)"
+            }
+          },
+          {
+            "id": 10,
+            "translations": {
+              "en": "do exercises/tasks",
+              "uk": "виконувати вправи/завдання",
+              "ru": "выполнять упражнения/задания",
+              "pl": "rozwiązywać ćwiczenia/robić zadania"
+            }
+          },
+          {
+            "id": 11,
+            "translations": {
+              "en": "do homework",
+              "uk": "виконувати домашнє завдання",
+              "ru": "делать домашнюю работу",
+              "pl": "odrabiać pracę domową"
+            }
+          },
+          {
+            "id": 12,
+            "translations": {
+              "en": "do well",
+              "uk": "добре справлятися",
+              "ru": "хорошо справляться",
+              "pl": "dobrze sobie radzić"
+            }
+          },
+          {
+            "id": 13,
+            "translations": {
+              "en": "do your best",
+              "uk": "дуже старатися",
+              "ru": "очень стараться",
+              "pl": "bardzo się starać"
+            }
+          },
+          {
+            "id": 14,
+            "translations": {
+              "en": "explain",
+              "uk": "пояснювати",
+              "ru": "объяснять",
+              "pl": "wyjaśniać"
+            }
+          },
+          {
+            "id": 15,
+            "translations": {
+              "en": "fail a test/an exam",
+              "uk": "провалити тест/іспит",
+              "ru": "провалить тест/экзамен",
+              "pl": "oblać test/egzamin"
+            }
+          },
+          {
+            "id": 16,
+            "translations": {
+              "en": "fall behind",
+              "uk": "відставати",
+              "ru": "отставать",
+              "pl": "mieć zaległości"
+            }
+          },
+          {
+            "id": 17,
+            "translations": {
+              "en": "get a 5 in a test",
+              "uk": "отримати п'ятірку за тест",
+              "ru": "получить пятёрку за тест",
+              "pl": "dostać piątkę z testu"
+            }
+          },
+          {
+            "id": 18,
+            "translations": {
+              "en": "get a certificate",
+              "uk": "отримати свідоцтво",
+              "ru": "получить аттестат",
+              "pl": "dostać świadectwo"
+            }
+          },
+          {
+            "id": 19,
+            "translations": {
+              "en": "get a good/bad mark",
+              "uk": "отримати гарну/погану оцінку",
+              "ru": "получить хорошую/плохую оценку",
+              "pl": "dostać dobrą/złą ocenę"
+            }
+          },
+          {
+            "id": 20,
+            "translations": {
+              "en": "hand in homework",
+              "uk": "здавати домашнє завдання",
+              "ru": "сдавать домашнюю работу",
+              "pl": "oddawać pracę domową"
+            }
+          },
+          {
+            "id": 21,
+            "translations": {
+              "en": "learn by heart",
+              "uk": "вчити напам'ять",
+              "ru": "учить наизусть",
+              "pl": "uczyć się na pamięć"
+            }
+          },
+          {
+            "id": 22,
+            "translations": {
+              "en": "leave school",
+              "uk": "закінчити школу",
+              "ru": "закончить школу",
+              "pl": "skończyć szkołę"
+            }
+          },
+          {
+            "id": 23,
+            "translations": {
+              "en": "make a mistake",
+              "uk": "зробити помилку",
+              "ru": "сделать ошибку",
+              "pl": "zrobić błąd"
+            }
+          },
+          {
+            "id": 24,
+            "translations": {
+              "en": "make progress",
+              "uk": "робити успіхи",
+              "ru": "делать успехи",
+              "pl": "robić postępy"
+            }
+          },
+          {
+            "id": 25,
+            "translations": {
+              "en": "mark homework",
+              "uk": "перевіряти й оцінювати домашнє завдання",
+              "ru": "проверять и оценивать домашнюю работу",
+              "pl": "oceniać pracę domową"
+            }
+          },
+          {
+            "id": 26,
+            "translations": {
+              "en": "miss lessons",
+              "uk": "пропускати уроки",
+              "ru": "пропускать уроки",
+              "pl": "opuszczać lekcje"
+            }
+          },
+          {
+            "id": 27,
+            "translations": {
+              "en": "pass a test/an exam",
+              "uk": "скласти тест/іспит",
+              "ru": "сдать тест/экзамен",
+              "pl": "zdać test/egzamin"
+            }
+          },
+          {
+            "id": 28,
+            "translations": {
+              "en": "pay attention to sth",
+              "uk": "уважно слухати щось",
+              "ru": "обращать внимание на что-либо",
+              "pl": "uważać, uważnie słuchać czegoś"
+            }
+          },
+          {
+            "id": 29,
+            "translations": {
+              "en": "play truant",
+              "uk": "прогулювати уроки",
+              "ru": "прогуливать уроки",
+              "pl": "chodzić na wagary"
+            }
+          },
+          {
+            "id": 30,
+            "translations": {
+              "en": "prepare for a test/an exam",
+              "uk": "готуватися до тесту/іспиту",
+              "ru": "готовиться к тесту/экзамену",
+              "pl": "przygotowywać się do testu/egzaminu"
+            }
+          },
+          {
+            "id": 31,
+            "translations": {
+              "en": "revise for a test/an exam",
+              "uk": "повторювати перед тестом/іспитом",
+              "ru": "повторять перед тестом/экзаменом",
+              "pl": "powtarzać przed testem/egzaminem"
+            }
+          },
+          {
+            "id": 32,
+            "translations": {
+              "en": "sign up for",
+              "uk": "записатися на",
+              "ru": "записаться на",
+              "pl": "zapisać się na"
+            }
+          },
+          {
+            "id": 33,
+            "translations": {
+              "en": "study hard",
+              "uk": "старанно вчитися",
+              "ru": "усердно учиться",
+              "pl": "uczyć się pilnie"
+            }
+          },
+          {
+            "id": 34,
+            "translations": {
+              "en": "take a break",
+              "uk": "зробити перерву",
+              "ru": "сделать перерыв",
+              "pl": "zrobić sobie przerwę"
+            }
+          },
+          {
+            "id": 35,
+            "translations": {
+              "en": "take a test/an exam",
+              "uk": "складати тест/іспит",
+              "ru": "сдавать тест/экзамен",
+              "pl": "przystąpić do testu/egzaminu"
+            }
+          },
+          {
+            "id": 36,
+            "translations": {
+              "en": "take notes",
+              "uk": "робити нотатки",
+              "ru": "делать заметки",
+              "pl": "robić notatki"
+            }
+          },
+          {
+            "id": 37,
+            "translations": {
+              "en": "write a composition/an essay",
+              "uk": "писати твір/есе",
+              "ru": "писать сочинение/эссе",
+              "pl": "pisać wypracowanie"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

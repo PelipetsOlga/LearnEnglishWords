@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.07.16.1",
+  "generatedAt": "2026-07-16T10:00:00Z",
+  "mainLanguage": "en",
+  "additionalLanguages": [
+    "uk",
+    "ru",
+    "pl"
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "key": "human",
+      "size": 208,
+      "title": {
+        "en": "Human",
+        "uk": "Людина",
+        "ru": "Человек",
+        "pl": "Człowiek"
+      }
+    },
+    {
+      "id": 2,
+      "key": "place_of_residence",
+      "size": 196,
+      "title": {
+        "en": "Place of residence",
+        "uk": "Місце проживання",
+        "ru": "Место жительства",
+        "pl": "Miejsce zamieszkania"
+      }
+    },
+    {
+      "id": 3,
+      "key": "education",
+      "size": 146,
+      "title": {
+        "en": "Education",
+        "uk": "Освіта",
+        "ru": "Образование",
+        "pl": "Edukacja"
+      }
+    }
+  ]
+}
