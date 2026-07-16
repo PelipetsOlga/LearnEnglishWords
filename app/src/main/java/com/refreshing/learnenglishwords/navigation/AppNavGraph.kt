@@ -10,8 +10,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.ui.graphics.Color
+import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
+import com.refreshing.learnenglishwords.ui.theme.AppGray
+import com.refreshing.learnenglishwords.ui.theme.AppNavy
+import com.refreshing.learnenglishwords.ui.theme.AppPrimary
+import com.refreshing.learnenglishwords.ui.theme.AppPrimaryContainer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -86,15 +93,13 @@ fun AppNavGraph(
     Scaffold(
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar {
+                NavigationBar(containerColor = AppCardSurface) {
                     bottomNavItems.forEach { item ->
                         NavigationBarItem(
                             selected = currentRoute == item.route,
                             onClick = {
                                 if (currentRoute != item.route) {
                                     navController.navigate(item.route) {
-                                        // Pop to Topics (the first bottom-bar destination) so the
-                                        // back stack never grows beyond one level across tabs.
                                         popUpTo(Routes.TOPICS) {
                                             saveState = true
                                         }
@@ -105,6 +110,13 @@ fun AppNavGraph(
                             },
                             icon = { Icon(item.icon, contentDescription = item.label) },
                             label = { Text(item.label) },
+                            colors = NavigationBarItemDefaults.colors(
+                                selectedIconColor = AppPrimary,
+                                selectedTextColor = AppPrimary,
+                                indicatorColor = AppPrimaryContainer,
+                                unselectedIconColor = AppGray,
+                                unselectedTextColor = AppGray,
+                            ),
                         )
                     }
                 }
