@@ -27,4 +27,7 @@ interface CatalogDao {
 
     @Query("SELECT * FROM catalog_language WHERE isMain = 0 ORDER BY position ASC")
     fun observeAdditionalLanguages(): Flow<List<CatalogLanguageEntity>>
+
+    @Query("SELECT languageCode FROM catalog_language WHERE isMain = 1 LIMIT 1")
+    fun observeMainLanguageCode(): Flow<String?>
 }

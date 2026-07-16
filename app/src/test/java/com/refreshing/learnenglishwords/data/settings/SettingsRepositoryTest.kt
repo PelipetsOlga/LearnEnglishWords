@@ -158,4 +158,5 @@ private class FakeCatalogDao : CatalogDao {
     override suspend fun upsertCatalogState(state: CatalogStateEntity) = Unit
     override suspend fun upsertCatalogLanguages(languages: List<CatalogLanguageEntity>) = Unit
     override suspend fun deleteCatalogLanguages() = Unit
+    override fun observeMainLanguageCode(): Flow<String?> = MutableStateFlow("en")
 }

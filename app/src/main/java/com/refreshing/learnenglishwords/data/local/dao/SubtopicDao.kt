@@ -20,6 +20,9 @@ interface SubtopicDao {
     @Query("SELECT COUNT(*) FROM subtopic WHERE isActive = 1")
     suspend fun getActiveSubtopicCount(): Int
 
+    @Query("SELECT * FROM subtopic_title WHERE subtopicUid = :subtopicUid")
+    fun observeSubtopicTitles(subtopicUid: String): Flow<List<SubtopicTitleEntity>>
+
     @Query(
         "SELECT st.* FROM subtopic_title st INNER JOIN subtopic s ON st.subtopicUid = s.subtopicUid " +
             "WHERE s.topicKey = :topicKey AND s.isActive = 1",

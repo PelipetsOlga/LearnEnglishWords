@@ -147,7 +147,6 @@ fun AppNavGraph(
             ) { backStackEntry ->
                 val subtopicUid = Uri.decode(backStackEntry.arguments?.getString("subtopicUid") ?: "")
                 LearnScreen(
-                    subtopicUid = subtopicUid,
                     onNavigateBack = { navController.popBackStack() },
                     onStartQuiz = {
                         navController.navigate(Routes.quiz(subtopicUid)) {
