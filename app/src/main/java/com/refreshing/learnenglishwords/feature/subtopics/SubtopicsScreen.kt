@@ -45,6 +45,7 @@ fun SubtopicsScreen(
     onLearnClick: (subtopicUid: String) -> Unit,
     onQuizClick: (subtopicUid: String) -> Unit,
     onQuizTopicClick: (topicKey: String) -> Unit,
+    onLearnTopicClick: (topicKey: String) -> Unit,
     viewModel: SubtopicsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -55,6 +56,7 @@ fun SubtopicsScreen(
                 is SubtopicsEffect.NavigateToLearn -> onLearnClick(effect.subtopicUid)
                 is SubtopicsEffect.NavigateToQuiz -> onQuizClick(effect.subtopicUid)
                 is SubtopicsEffect.NavigateToQuizTopic -> onQuizTopicClick(effect.topicKey)
+                is SubtopicsEffect.NavigateToLearnTopic -> onLearnTopicClick(effect.topicKey)
             }
         }
     }
@@ -116,6 +118,11 @@ fun SubtopicsScreen(
                         onLearnClick = { viewModel.onIntent(SubtopicsIntent.LearnClicked(subtopic.subtopicUid)) },
                         onQuizClick = { viewModel.onIntent(SubtopicsIntent.QuizClicked(subtopic.subtopicUid)) },
                         onResetClick = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicRequested(subtopic.subtopicUid)) },
+                    )
+                }
+                item(key = "__all_words__") {
+                    AllWordsCard(
+                        onClick = { viewModel.onIntent(SubtopicsIntent.LearnTopicClicked) },
                     )
                 }
             }
@@ -201,6 +208,28 @@ private fun SubtopicCard(
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
                 )
             }
+        }
+    }
+}
+
+@Composable
+private fun AllWordsCard(onClick: () -> Unit) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = "All words",
+                style = MaterialTheme.typography.titleSmall,
+            )
+            Icon(Icons.AutoMirrored.Filled.MenuBook, contentDescription = "All words")
         }
     }
 }

@@ -3,6 +3,7 @@ package com.refreshing.learnenglishwords.feature.learn
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,6 +11,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -105,22 +108,40 @@ fun LearnScreen(
 
 @Composable
 private fun WordRow(word: LearnWordItem) {
-    Column(
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(
-            text = word.mainTranslation,
-            style = MaterialTheme.typography.bodyLarge,
-        )
-        word.additionalTranslations.forEach { (lang, text) ->
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
             Text(
-                text = "$lang: $text",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                text = word.mainTranslation,
+                style = MaterialTheme.typography.bodyLarge,
             )
+            word.additionalTranslations.forEach { (lang, text) ->
+                Text(
+                    text = "$lang: $text",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
+        when (word.status) {
+            WordStatus.LEARNED -> Icon(
+                Icons.Default.CheckCircle,
+                contentDescription = "Learned",
+                tint = androidx.compose.ui.graphics.Color(0xFF4CAF50),
+            )
+            WordStatus.HAS_MISTAKES -> Icon(
+                Icons.Default.Warning,
+                contentDescription = "Has mistakes",
+                tint = MaterialTheme.colorScheme.error,
+            )
+            WordStatus.NONE -> {}
         }
     }
 }

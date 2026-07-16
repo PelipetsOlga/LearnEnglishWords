@@ -40,6 +40,7 @@ object Routes {
     const val TOPICS = "topics"
     const val TOPIC_DETAIL = "topic/{topicKey}"
     const val LEARN = "learn/{subtopicUid}"
+    const val LEARN_TOPIC = "learnTopic/{topicKey}"
     const val QUIZ = "quiz/{subtopicUid}"
     const val QUIZ_TOPIC = "quizTopic/{topicKey}"
     const val PROGRESS = "progress"
@@ -47,6 +48,7 @@ object Routes {
 
     fun topicDetail(topicKey: String) = "topic/$topicKey"
     fun learn(subtopicUid: String) = "learn/${Uri.encode(subtopicUid)}"
+    fun learnTopic(topicKey: String) = "learnTopic/${Uri.encode(topicKey)}"
     fun quiz(subtopicUid: String) = "quiz/${Uri.encode(subtopicUid)}"
     fun quizTopic(topicKey: String) = "quizTopic/${Uri.encode(topicKey)}"
 }
@@ -149,6 +151,9 @@ fun AppNavGraph(
                     onQuizTopicClick = { topicKey ->
                         navController.navigate(Routes.quizTopic(topicKey))
                     },
+                    onLearnTopicClick = { topicKey ->
+                        navController.navigate(Routes.learnTopic(topicKey))
+                    },
                 )
             }
 
@@ -162,6 +167,21 @@ fun AppNavGraph(
                     onStartQuiz = {
                         navController.navigate(Routes.quiz(subtopicUid)) {
                             popUpTo(Routes.TOPIC_DETAIL) // keep subtopics in back stack
+                        }
+                    },
+                )
+            }
+
+            composable(
+                route = Routes.LEARN_TOPIC,
+                arguments = listOf(navArgument("topicKey") { type = NavType.StringType }),
+            ) { backStackEntry ->
+                val topicKey = Uri.decode(backStackEntry.arguments?.getString("topicKey") ?: "")
+                LearnScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                    onStartQuiz = {
+                        navController.navigate(Routes.quizTopic(topicKey)) {
+                            popUpTo(Routes.TOPIC_DETAIL)
                         }
                     },
                 )

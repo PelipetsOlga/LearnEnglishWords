@@ -15,6 +15,12 @@ class ProgressRepositoryImpl @Inject constructor(
     override fun observeAllActiveProgress(): Flow<List<WordProgressEntity>> =
         progressDao.observeAllActiveProgress()
 
+    override fun observeProgressForSubtopic(subtopicUid: String): Flow<List<WordProgressEntity>> =
+        progressDao.observeProgressForSubtopic(subtopicUid)
+
+    override fun observeProgressForTopic(topicKey: String): Flow<List<WordProgressEntity>> =
+        progressDao.observeProgressForTopic(topicKey)
+
     override suspend fun getProgressForSubtopic(subtopicUid: String): List<WordProgressEntity> =
         progressDao.getProgressForSubtopic(subtopicUid)
 

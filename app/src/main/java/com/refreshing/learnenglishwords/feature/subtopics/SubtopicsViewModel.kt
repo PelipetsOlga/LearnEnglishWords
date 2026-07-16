@@ -75,6 +75,9 @@ class SubtopicsViewModel @Inject constructor(
 
             SubtopicsIntent.QuizTopicClicked ->
                 viewModelScope.launch { _effects.send(SubtopicsEffect.NavigateToQuizTopic(topicKey)) }
+
+            SubtopicsIntent.LearnTopicClicked ->
+                viewModelScope.launch { _effects.send(SubtopicsEffect.NavigateToLearnTopic(topicKey)) }
         }
     }
 }

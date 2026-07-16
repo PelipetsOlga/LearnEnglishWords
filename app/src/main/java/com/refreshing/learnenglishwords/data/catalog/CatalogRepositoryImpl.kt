@@ -87,6 +87,17 @@ class CatalogRepositoryImpl @Inject constructor(
             }
         }
 
+    override fun observeWordEntriesForTopic(topicKey: String): Flow<List<WordEntry>> =
+        wordDao.observeActiveWordsWithTranslationsForTopic("$topicKey/%").map { list ->
+            list.map { wt ->
+                WordEntry(
+                    wordUid = wt.word.wordUid,
+                    position = wt.word.position,
+                    translations = wt.translations.associate { it.language to it.text },
+                )
+            }
+        }
+
     override suspend fun getWordEntriesForTopic(topicKey: String): List<WordEntry> =
         wordDao.getActiveWordsWithTranslationsForTopic("$topicKey/%").map { wt ->
             WordEntry(
