@@ -145,12 +145,13 @@ private fun SubtopicCard(
             Text(
                 text = "${subtopic.wordCount} words · ${subtopic.progressPercent}%",
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            LinearProgressIndicator(
-                progress = { subtopic.progressPercent / 100f },
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-            )
+            if (subtopic.progressPercent > 0) {
+                LinearProgressIndicator(
+                    progress = { subtopic.progressPercent / 100f },
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                )
+            }
         }
     }
 }

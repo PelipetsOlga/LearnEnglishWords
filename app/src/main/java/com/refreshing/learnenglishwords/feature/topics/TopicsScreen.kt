@@ -29,10 +29,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.refreshing.learnenglishwords.R
 import com.refreshing.learnenglishwords.core.model.Topic
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,7 +55,7 @@ fun TopicsScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Topics") })
+            TopAppBar(title = { Text(stringResource(R.string.app_name)) })
         },
     ) { innerPadding ->
         if (state.isLoading) {
@@ -137,12 +139,13 @@ private fun TopicCard(
             Text(
                 text = "${topic.wordCount} words · ${topic.progressPercent}%",
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            LinearProgressIndicator(
-                progress = { topic.progressPercent / 100f },
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-            )
+            if (topic.progressPercent > 0) {
+                LinearProgressIndicator(
+                    progress = { topic.progressPercent / 100f },
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                )
+            }
         }
     }
 }
