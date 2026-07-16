@@ -65,6 +65,17 @@ class CatalogRepositoryImpl @Inject constructor(
     override fun observeMainLanguage(): Flow<String> =
         catalogDao.observeMainLanguageCode().map { it ?: "en" }
 
+    override fun observeAllWordEntries(): Flow<List<WordEntry>> =
+        wordDao.observeAllActiveWordsWithTranslations().map { list ->
+            list.map { wt ->
+                WordEntry(
+                    wordUid = wt.word.wordUid,
+                    position = wt.word.position,
+                    translations = wt.translations.associate { it.language to it.text },
+                )
+            }
+        }
+
     override fun observeWordEntries(subtopicUid: String): Flow<List<WordEntry>> =
         wordDao.observeActiveWordsWithTranslations(subtopicUid).map { list ->
             list.map { wt ->
