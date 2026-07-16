@@ -47,9 +47,9 @@ class SettingsRepositoryTest {
     }
 
     @Test
-    fun `defaults - translation direction is MAIN_TO_ADDITIONAL`() = runTest {
+    fun `defaults - translation direction is BOTH`() = runTest {
         val settings = repository.observeSettings().first()
-        assertEquals(TranslationDirection.MAIN_TO_ADDITIONAL, settings.translationDirection)
+        assertEquals(TranslationDirection.BOTH, settings.translationDirection)
     }
 
     @Test

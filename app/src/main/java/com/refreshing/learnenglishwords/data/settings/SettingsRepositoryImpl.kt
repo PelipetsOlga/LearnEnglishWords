@@ -42,7 +42,7 @@ class SettingsRepositoryImpl @Inject constructor(
                 ?: QuizOrder.RANDOM
             val savedDirection = prefs[Keys.TRANSLATION_DIRECTION]?.let {
                 runCatching { TranslationDirection.valueOf(it) }.getOrNull()
-            } ?: TranslationDirection.MAIN_TO_ADDITIONAL
+            } ?: TranslationDirection.BOTH
 
             val savedLangs = prefs[Keys.SELECTED_LANGUAGES]
             val selectedLangs = if (savedLangs == null) {
