@@ -10,6 +10,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -31,9 +32,13 @@ class SubtopicsViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            catalogRepository.observeSubtopics(topicKey).collect { subtopics ->
-                _uiState.value = _uiState.value.copy(subtopics = subtopics, isLoading = false)
-            }
+            combine(
+                catalogRepository.observeTopics(),
+                catalogRepository.observeSubtopics(topicKey),
+            ) { topics, subtopics ->
+                val title = topics.find { it.topicKey == topicKey }?.title ?: topicKey
+                _uiState.value.copy(topicTitle = title, subtopics = subtopics, isLoading = false)
+            }.collect { _uiState.value = it }
         }
     }
 
@@ -48,13 +53,24 @@ class SubtopicsViewModel @Inject constructor(
             is SubtopicsIntent.ResetSubtopicRequested ->
                 _uiState.value = _uiState.value.copy(resetConfirmSubtopicUid = intent.subtopicUid)
 
-            SubtopicsIntent.ResetDismissed ->
+            SubtopicsIntent.ResetSubtopicDismissed ->
                 _uiState.value = _uiState.value.copy(resetConfirmSubtopicUid = null)
 
-            SubtopicsIntent.ResetConfirmed -> {
+            SubtopicsIntent.ResetSubtopicConfirmed -> {
                 val uid = _uiState.value.resetConfirmSubtopicUid ?: return
                 _uiState.value = _uiState.value.copy(resetConfirmSubtopicUid = null)
                 viewModelScope.launch { progressRepository.resetSubtopic(uid) }
+            }
+
+            SubtopicsIntent.ResetTopicRequested ->
+                _uiState.value = _uiState.value.copy(resetConfirmTopic = true)
+
+            SubtopicsIntent.ResetTopicDismissed ->
+                _uiState.value = _uiState.value.copy(resetConfirmTopic = false)
+
+            SubtopicsIntent.ResetTopicConfirmed -> {
+                _uiState.value = _uiState.value.copy(resetConfirmTopic = false)
+                viewModelScope.launch { progressRepository.resetTopic(topicKey) }
             }
         }
     }

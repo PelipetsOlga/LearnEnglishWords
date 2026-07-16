@@ -64,6 +64,14 @@ fun SubtopicsScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
+                actions = {
+                    IconButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetTopicRequested) }) {
+                        Icon(
+                            Icons.Default.Refresh,
+                            contentDescription = "Reset progress for this topic",
+                        )
+                    }
+                },
             )
         },
     ) { innerPadding ->
@@ -96,16 +104,34 @@ fun SubtopicsScreen(
 
     if (state.resetConfirmSubtopicUid != null) {
         AlertDialog(
-            onDismissRequest = { viewModel.onIntent(SubtopicsIntent.ResetDismissed) },
-            title = { Text("Reset progress?") },
+            onDismissRequest = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicDismissed) },
+            title = { Text("Reset subtopic progress?") },
             text = { Text("All progress for this subtopic will be deleted. This cannot be undone.") },
             confirmButton = {
-                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetConfirmed) }) {
+                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicConfirmed) }) {
                     Text("Reset", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {
-                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetDismissed) }) {
+                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicDismissed) }) {
+                    Text("Cancel")
+                }
+            },
+        )
+    }
+
+    if (state.resetConfirmTopic) {
+        AlertDialog(
+            onDismissRequest = { viewModel.onIntent(SubtopicsIntent.ResetTopicDismissed) },
+            title = { Text("Reset topic progress?") },
+            text = { Text("All progress for \"${state.topicTitle.ifEmpty { state.topicKey }}\" will be deleted. This cannot be undone.") },
+            confirmButton = {
+                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetTopicConfirmed) }) {
+                    Text("Reset", color = MaterialTheme.colorScheme.error)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetTopicDismissed) }) {
                     Text("Cancel")
                 }
             },
@@ -133,13 +159,13 @@ private fun SubtopicCard(
                     modifier = Modifier.weight(1f),
                 )
                 IconButton(onClick = onLearnClick) {
-                    Icon(Icons.AutoMirrored.Filled.MenuBook, contentDescription = "Learn")
+                    Icon(Icons.AutoMirrored.Filled.MenuBook, contentDescription = "Learn ${subtopic.title}")
                 }
                 IconButton(onClick = onQuizClick) {
-                    Icon(Icons.Default.Quiz, contentDescription = "Quiz")
+                    Icon(Icons.Default.Quiz, contentDescription = "Quiz ${subtopic.title}")
                 }
                 IconButton(onClick = onResetClick) {
-                    Icon(Icons.Default.Refresh, contentDescription = "Reset subtopic progress")
+                    Icon(Icons.Default.Refresh, contentDescription = "Reset progress for ${subtopic.title}")
                 }
             }
             Text(
