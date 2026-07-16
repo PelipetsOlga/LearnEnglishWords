@@ -1,6 +1,7 @@
 package com.refreshing.learnenglishwords.data.progress
 
 import com.refreshing.learnenglishwords.data.local.dao.ProgressDao
+import com.refreshing.learnenglishwords.data.local.entity.WordProgressEntity
 import com.refreshing.learnenglishwords.domain.progress.ProgressRepository
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,6 +10,12 @@ import javax.inject.Singleton
 class ProgressRepositoryImpl @Inject constructor(
     private val progressDao: ProgressDao,
 ) : ProgressRepository {
+
+    override suspend fun getProgressForSubtopic(subtopicUid: String): List<WordProgressEntity> =
+        progressDao.getProgressForSubtopic(subtopicUid)
+
+    override suspend fun upsertProgress(progress: WordProgressEntity) =
+        progressDao.upsertProgress(progress)
 
     override suspend fun resetTopic(topicKey: String) =
         progressDao.deleteProgressForTopic(topicKey)

@@ -25,7 +25,7 @@ private const val TARGET_OPTIONS = 4
  * drawn first from the same word list. Tasks with no viable distractor are dropped.
  */
 class BuildQuizSession @Inject constructor(
-    private val shuffler: Shuffler = RandomShuffler,
+    private val shuffler: Shuffler,
 ) {
 
     fun build(

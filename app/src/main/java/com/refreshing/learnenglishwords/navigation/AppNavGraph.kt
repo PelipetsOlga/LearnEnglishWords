@@ -159,10 +159,8 @@ fun AppNavGraph(
             composable(
                 route = Routes.QUIZ,
                 arguments = listOf(navArgument("subtopicUid") { type = NavType.StringType }),
-            ) { backStackEntry ->
-                val subtopicUid = Uri.decode(backStackEntry.arguments?.getString("subtopicUid") ?: "")
+            ) { _ ->
                 QuizScreen(
-                    subtopicUid = subtopicUid,
                     onNavigateBack = { navController.popBackStack() },
                 )
             }

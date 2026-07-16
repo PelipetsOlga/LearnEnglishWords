@@ -19,6 +19,13 @@ interface ProgressDao {
     @Query(
         "SELECT wp.* FROM word_progress wp " +
             "INNER JOIN word w ON wp.wordUid = w.wordUid " +
+            "WHERE w.subtopicUid = :subtopicUid AND w.isActive = 1",
+    )
+    suspend fun getProgressForSubtopic(subtopicUid: String): List<WordProgressEntity>
+
+    @Query(
+        "SELECT wp.* FROM word_progress wp " +
+            "INNER JOIN word w ON wp.wordUid = w.wordUid " +
             "INNER JOIN subtopic s ON w.subtopicUid = s.subtopicUid " +
             "WHERE s.topicKey = :topicKey AND w.isActive = 1",
     )

@@ -70,6 +70,7 @@ class CatalogRepositoryImpl @Inject constructor(
             list.map { wt ->
                 WordEntry(
                     wordUid = wt.word.wordUid,
+                    position = wt.word.position,
                     translations = wt.translations.associate { it.language to it.text },
                 )
             }
