@@ -15,22 +15,27 @@ import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.core.model.Topic
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopicsScreen(
     onTopicClick: (topicKey: String) -> Unit,
@@ -46,23 +51,35 @@ fun TopicsScreen(
         }
     }
 
-    if (state.isLoading) {
-        Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            CircularProgressIndicator()
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("Topics") })
+        },
+    ) { innerPadding ->
+        if (state.isLoading) {
+            Box(
+                Modifier.fillMaxSize().padding(innerPadding),
+                contentAlignment = Alignment.Center,
+            ) {
+                CircularProgressIndicator()
+            }
+            return@Scaffold
         }
-        return
-    }
 
-    LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        items(state.topics, key = { it.topicKey }) { topic ->
-            TopicCard(
-                topic = topic,
-                onClick = { viewModel.onIntent(TopicsIntent.TopicClicked(topic.topicKey)) },
-                onResetClick = { viewModel.onIntent(TopicsIntent.ResetTopicRequested(topic.topicKey)) },
-            )
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            items(state.topics, key = { it.topicKey }) { topic ->
+                TopicCard(
+                    topic = topic,
+                    onClick = { viewModel.onIntent(TopicsIntent.TopicClicked(topic.topicKey)) },
+                    onResetClick = { viewModel.onIntent(TopicsIntent.ResetTopicRequested(topic.topicKey)) },
+                )
+            }
         }
     }
 
@@ -73,7 +90,7 @@ fun TopicsScreen(
             text = { Text("All progress for this topic will be deleted. This cannot be undone.") },
             confirmButton = {
                 TextButton(onClick = { viewModel.onIntent(TopicsIntent.ResetConfirmed) }) {
-                    Text("Reset")
+                    Text("Reset", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {
@@ -107,8 +124,14 @@ private fun TopicCard(
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.weight(1f),
                 )
-                IconButton(onClick = onResetClick) {
-                    Icon(Icons.Default.Refresh, contentDescription = "Reset topic progress")
+                IconButton(
+                    onClick = onResetClick,
+                    modifier = Modifier.semantics { },
+                ) {
+                    Icon(
+                        Icons.Default.Refresh,
+                        contentDescription = "Reset progress for ${topic.title}",
+                    )
                 }
             }
             Text(

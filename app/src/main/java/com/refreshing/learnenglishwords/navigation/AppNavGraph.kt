@@ -2,9 +2,11 @@ package com.refreshing.learnenglishwords.navigation
 
 import android.net.Uri
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -12,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -57,7 +60,7 @@ private data class BottomNavItem(
 )
 
 private val bottomNavItems = listOf(
-    BottomNavItem(Routes.TOPICS, "Topics", Icons.Default.List),
+    BottomNavItem(Routes.TOPICS, "Topics", Icons.AutoMirrored.Filled.List),
     BottomNavItem(Routes.PROGRESS, "Progress", Icons.Default.Star),
     BottomNavItem(Routes.SETTINGS, "Settings", Icons.Default.Settings),
 )
@@ -107,6 +110,9 @@ fun AppNavGraph(
         NavHost(
             navController = navController,
             startDestination = Routes.STARTUP,
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding),
         ) {
             composable(Routes.STARTUP) {
                 StartupScreen(

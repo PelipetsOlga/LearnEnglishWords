@@ -58,7 +58,7 @@ fun SubtopicsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(state.topicKey) },
+                title = { Text(state.topicTitle.ifEmpty { state.topicKey }) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -101,7 +101,7 @@ fun SubtopicsScreen(
             text = { Text("All progress for this subtopic will be deleted. This cannot be undone.") },
             confirmButton = {
                 TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetConfirmed) }) {
-                    Text("Reset")
+                    Text("Reset", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {
