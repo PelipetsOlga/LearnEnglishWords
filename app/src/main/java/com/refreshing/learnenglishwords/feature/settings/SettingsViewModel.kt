@@ -30,8 +30,9 @@ class SettingsViewModel @Inject constructor(
             ) { settings, availableLangs, catalogState ->
                 SettingsUiState(
                     quizOrder = settings.quizOrder,
-                    availableLanguages = availableLangs,
+                    availableLanguages = availableLangs.sortedByUiOrder(),
                     selectedLanguages = settings.selectedLanguages,
+                    quizLanguage = settings.quizLanguage,
                     translationDirection = settings.translationDirection,
                     catalogVersion = catalogState?.catalogVersion ?: "",
                     catalogGeneratedAt = catalogState?.generatedAt ?: 0L,
@@ -44,19 +45,19 @@ class SettingsViewModel @Inject constructor(
     fun onIntent(intent: SettingsIntent) {
         viewModelScope.launch {
             when (intent) {
-                is SettingsIntent.QuizOrderChanged ->
-                    settingsRepository.setQuizOrder(intent.order)
-
-                is SettingsIntent.LanguageToggled -> {
+                is SettingsIntent.VocabLanguageToggled -> {
                     val current = _uiState.value.selectedLanguages
-                    val updated = if (intent.languageCode in current) {
-                        current - intent.languageCode
-                    } else {
-                        current + intent.languageCode
-                    }
-                    // At-least-one enforcement: ignore deselect if it would leave 0 selected
+                    val updated = if (intent.languageCode in current) current - intent.languageCode
+                                  else current + intent.languageCode
+                    // At-least-one enforcement: ignore deselect if it would leave 0
                     settingsRepository.setSelectedLanguages(updated)
                 }
+
+                is SettingsIntent.QuizLanguageChanged ->
+                    settingsRepository.setQuizLanguage(intent.languageCode)
+
+                is SettingsIntent.QuizOrderChanged ->
+                    settingsRepository.setQuizOrder(intent.order)
 
                 is SettingsIntent.TranslationDirectionChanged ->
                     settingsRepository.setTranslationDirection(intent.direction)
@@ -64,3 +65,9 @@ class SettingsViewModel @Inject constructor(
         }
     }
 }
+
+/** Display order for language chips: PL first, then UA, then RU. */
+private val LANG_UI_ORDER = listOf("pl", "uk", "ru")
+
+private fun List<String>.sortedByUiOrder(): List<String> =
+    sortedBy { code -> LANG_UI_ORDER.indexOf(code).let { if (it == -1) Int.MAX_VALUE else it } }

@@ -61,7 +61,8 @@ class QuizViewModel @Inject constructor(
         val settings = settingsRepository.observeSettings().first()
         val availableLangs = settingsRepository.observeAvailableLanguages().first()
         val mainLang = catalogRepository.observeMainLanguage().first()
-        val orderedSelected = availableLangs.filter { it in settings.selectedLanguages }
+        // Quiz uses a single language chosen in Settings
+        val orderedSelected = listOf(settings.quizLanguage).filter { it in availableLangs }
 
         val wordEntries = catalogRepository.observeWordEntries(subtopicUid).first()
         val progressList = progressRepository.getProgressForSubtopic(subtopicUid)

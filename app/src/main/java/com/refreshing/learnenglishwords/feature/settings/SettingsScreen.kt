@@ -63,104 +63,66 @@ fun SettingsScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(innerPadding)
                 .padding(horizontal = 16.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            // --- Quiz order ---
-            Text("Quiz order", style = MaterialTheme.typography.titleMedium)
-            QuizOrder.entries.forEach { order ->
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable(
-                            onClickLabel = order.name.lowercase().replaceFirstChar { it.uppercase() },
-                            role = Role.RadioButton,
-                        ) {
-                            viewModel.onIntent(SettingsIntent.QuizOrderChanged(order))
-                        }
-                        .semantics { role = Role.RadioButton },
-                ) {
-                    RadioButton(
-                        selected = state.quizOrder == order,
-                        onClick = null,
-                    )
-                    Text(
-                        text = order.name.lowercase().replaceFirstChar { it.uppercase() },
-                        modifier = Modifier.padding(start = 4.dp),
+            // ── 1. Vocabulary settings ──────────────────────────────────────
+            SectionHeader("Vocabulary settings")
+
+            SubsectionHeader("Languages")
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                state.availableLanguages.forEach { lang ->
+                    val isSelected = lang in state.selectedLanguages
+                    val isOnlySelected = isSelected && state.selectedLanguages.size == 1
+                    FilterChip(
+                        selected = isSelected,
+                        onClick = {
+                            if (!isOnlySelected) {
+                                viewModel.onIntent(SettingsIntent.VocabLanguageToggled(lang))
+                            }
+                        },
+                        label = { Text(langLabel(lang)) },
                     )
                 }
             }
 
-            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            HorizontalDivider()
 
-            // --- Language multi-select ---
-            Text("Languages", style = MaterialTheme.typography.titleMedium)
-            if (state.availableLanguages.isEmpty()) {
-                Text(
-                    text = "No additional languages available",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+            // ── 2. Quiz settings ────────────────────────────────────────────
+            SectionHeader("Quiz settings")
+
+            SubsectionHeader("Language")
+            state.availableLanguages.forEach { lang ->
+                RadioRow(
+                    label = langLabel(lang),
+                    selected = state.quizLanguage == lang,
+                    onClick = { viewModel.onIntent(SettingsIntent.QuizLanguageChanged(lang)) },
                 )
-            } else {
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    state.availableLanguages.forEach { lang ->
-                        val isSelected = lang in state.selectedLanguages
-                        val isOnlySelected = isSelected && state.selectedLanguages.size == 1
-                        FilterChip(
-                            selected = isSelected,
-                            onClick = {
-                                if (!isOnlySelected) {
-                                    viewModel.onIntent(SettingsIntent.LanguageToggled(lang))
-                                }
-                            },
-                            label = { Text(lang.uppercase()) },
-                        )
-                    }
-                }
-                if (state.selectedLanguages.size == 1) {
-                    Text(
-                        text = "At least one language must be selected",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.error,
-                    )
-                }
             }
 
-            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            SubsectionHeader("Words order")
+            QuizOrder.entries.forEach { order ->
+                RadioRow(
+                    label = orderLabel(order),
+                    selected = state.quizOrder == order,
+                    onClick = { viewModel.onIntent(SettingsIntent.QuizOrderChanged(order)) },
+                )
+            }
 
-            // --- Translation direction ---
-            Text("Translation direction", style = MaterialTheme.typography.titleMedium)
+            SubsectionHeader("Translation direction")
             TranslationDirection.entries.forEach { direction ->
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable(
-                            onClickLabel = directionLabel(direction),
-                            role = Role.RadioButton,
-                        ) {
-                            viewModel.onIntent(SettingsIntent.TranslationDirectionChanged(direction))
-                        }
-                        .semantics { role = Role.RadioButton },
-                ) {
-                    RadioButton(
-                        selected = state.translationDirection == direction,
-                        onClick = null,
-                    )
-                    Text(
-                        text = directionLabel(direction),
-                        modifier = Modifier.padding(start = 4.dp),
-                    )
-                }
+                RadioRow(
+                    label = directionLabel(direction),
+                    selected = state.translationDirection == direction,
+                    onClick = { viewModel.onIntent(SettingsIntent.TranslationDirectionChanged(direction)) },
+                )
             }
 
-            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            HorizontalDivider()
 
-            // --- Catalog metadata ---
-            Text("Catalog", style = MaterialTheme.typography.titleMedium)
+            // ── 3. Catalog info ─────────────────────────────────────────────
+            SectionHeader("Catalog")
             if (state.catalogVersion.isNotEmpty()) {
                 Text(
                     text = "Version: ${state.catalogVersion}",
@@ -168,10 +130,8 @@ fun SettingsScreen(
                 )
             }
             if (state.catalogGeneratedAt > 0L) {
-                val dateStr = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
-                    .format(Date(state.catalogGeneratedAt))
                 Text(
-                    text = "Generated: $dateStr",
+                    text = "Generated: ${formatDate(state.catalogGeneratedAt)}",
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
@@ -179,8 +139,53 @@ fun SettingsScreen(
     }
 }
 
-private fun directionLabel(direction: TranslationDirection): String = when (direction) {
+@Composable
+private fun SectionHeader(title: String) {
+    Text(title, style = MaterialTheme.typography.titleMedium)
+}
+
+@Composable
+private fun SubsectionHeader(title: String) {
+    Text(
+        text = title,
+        style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+    )
+}
+
+@Composable
+private fun RadioRow(label: String, selected: Boolean, onClick: () -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClickLabel = label, role = Role.RadioButton, onClick = onClick)
+            .semantics { role = Role.RadioButton },
+    ) {
+        RadioButton(selected = selected, onClick = null)
+        Text(
+            text = label,
+            modifier = Modifier.padding(start = 4.dp),
+            style = MaterialTheme.typography.bodyLarge,
+        )
+    }
+}
+
+private fun langLabel(code: String) = when (code) {
+    "uk" -> "UA"
+    else -> code.uppercase()
+}
+
+private fun orderLabel(order: QuizOrder) = when (order) {
+    QuizOrder.RANDOM -> "Random"
+    QuizOrder.EXISTING -> "Existing"
+}
+
+private fun directionLabel(direction: TranslationDirection) = when (direction) {
     TranslationDirection.MAIN_TO_ADDITIONAL -> "Main → Additional"
     TranslationDirection.ADDITIONAL_TO_MAIN -> "Additional → Main"
     TranslationDirection.BOTH -> "Both directions"
 }
+
+private fun formatDate(epochMs: Long): String =
+    SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date(epochMs))

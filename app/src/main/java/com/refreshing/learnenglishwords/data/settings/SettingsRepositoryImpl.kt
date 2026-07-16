@@ -26,6 +26,11 @@ class SettingsRepositoryImpl @Inject constructor(
         val QUIZ_ORDER = stringPreferencesKey("quiz_order")
         val SELECTED_LANGUAGES = stringSetPreferencesKey("selected_languages")
         val TRANSLATION_DIRECTION = stringPreferencesKey("translation_direction")
+        val QUIZ_LANGUAGE = stringPreferencesKey("quiz_language")
+    }
+
+    companion object {
+        private const val DEFAULT_LANGUAGE = "pl"
     }
 
     override fun observeSettings(): Flow<QuizSettings> {
@@ -41,18 +46,29 @@ class SettingsRepositoryImpl @Inject constructor(
 
             val savedLangs = prefs[Keys.SELECTED_LANGUAGES]
             val selectedLangs = if (savedLangs == null) {
-                // First launch: select all available
-                availableLangs
+                // First launch: default to "pl" only
+                val default = if (DEFAULT_LANGUAGE in availableLangs) setOf(DEFAULT_LANGUAGE) else availableLangs
+                default
             } else {
-                // Remove unsupported codes; if empty, fall back to all available
+                // Remove unsupported codes; if empty, fall back to default
                 val valid = savedLangs.intersect(availableLangs)
-                valid.ifEmpty { availableLangs }
+                valid.ifEmpty {
+                    if (DEFAULT_LANGUAGE in availableLangs) setOf(DEFAULT_LANGUAGE) else availableLangs
+                }
+            }
+
+            val savedQuizLang = prefs[Keys.QUIZ_LANGUAGE]
+            val quizLanguage = when {
+                savedQuizLang != null && savedQuizLang in availableLangs -> savedQuizLang
+                DEFAULT_LANGUAGE in availableLangs -> DEFAULT_LANGUAGE
+                else -> availableLangs.firstOrNull() ?: DEFAULT_LANGUAGE
             }
 
             QuizSettings(
                 quizOrder = savedOrder,
                 selectedLanguages = selectedLangs,
                 translationDirection = savedDirection,
+                quizLanguage = quizLanguage,
             )
         }
     }
@@ -71,5 +87,9 @@ class SettingsRepositoryImpl @Inject constructor(
 
     override suspend fun setTranslationDirection(direction: TranslationDirection) {
         dataStore.edit { it[Keys.TRANSLATION_DIRECTION] = direction.name }
+    }
+
+    override suspend fun setQuizLanguage(language: String) {
+        dataStore.edit { it[Keys.QUIZ_LANGUAGE] = language }
     }
 }

@@ -53,10 +53,25 @@ class SettingsRepositoryTest {
     }
 
     @Test
-    fun `defaults - selected languages contain all available languages on first launch`() = runTest {
+    fun `defaults - selected languages default to pl only on first launch`() = runTest {
         fakeCatalogDao.setLanguages(listOf("uk", "ru", "pl"))
         val settings = repository.observeSettings().first()
-        assertEquals(setOf("uk", "ru", "pl"), settings.selectedLanguages)
+        assertEquals(setOf("pl"), settings.selectedLanguages)
+    }
+
+    @Test
+    fun `defaults - quiz language defaults to pl`() = runTest {
+        fakeCatalogDao.setLanguages(listOf("uk", "ru", "pl"))
+        val settings = repository.observeSettings().first()
+        assertEquals("pl", settings.quizLanguage)
+    }
+
+    @Test
+    fun `setQuizLanguage - persists and reflects in observeSettings`() = runTest {
+        fakeCatalogDao.setLanguages(listOf("uk", "ru", "pl"))
+        repository.setQuizLanguage("uk")
+        val settings = repository.observeSettings().first()
+        assertEquals("uk", settings.quizLanguage)
     }
 
     // --- quiz order ---

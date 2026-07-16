@@ -21,4 +21,6 @@ interface SettingsRepository {
     suspend fun setSelectedLanguages(languages: Set<String>)
 
     suspend fun setTranslationDirection(direction: TranslationDirection)
+
+    suspend fun setQuizLanguage(language: String)
 }
