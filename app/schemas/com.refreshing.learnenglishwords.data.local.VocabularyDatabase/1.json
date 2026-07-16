@@ -1,0 +1,609 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5b093a29dbdbcc64edf1896bf5198bc8",
+    "entities": [
+      {
+        "tableName": "catalog_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `schemaVersion` INTEGER NOT NULL, `catalogRevision` INTEGER NOT NULL, `catalogVersion` TEXT NOT NULL, `generatedAt` INTEGER NOT NULL, `savedAt` INTEGER NOT NULL, `source` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "schemaVersion",
+            "columnName": "schemaVersion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catalogRevision",
+            "columnName": "catalogRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catalogVersion",
+            "columnName": "catalogVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "generatedAt",
+            "columnName": "generatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "savedAt",
+            "columnName": "savedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "catalog_language",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`languageCode` TEXT NOT NULL, `isMain` INTEGER NOT NULL, `position` INTEGER NOT NULL, PRIMARY KEY(`languageCode`))",
+        "fields": [
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isMain",
+            "columnName": "isMain",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "languageCode"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "topic",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`topicKey` TEXT NOT NULL, `remoteId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `sourceFile` TEXT NOT NULL, `topicRevision` INTEGER NOT NULL, `contentHash` TEXT, `expectedWordCount` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `lastSeenCatalogRevision` INTEGER NOT NULL, PRIMARY KEY(`topicKey`))",
+        "fields": [
+          {
+            "fieldPath": "topicKey",
+            "columnName": "topicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remoteId",
+            "columnName": "remoteId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceFile",
+            "columnName": "sourceFile",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "topicRevision",
+            "columnName": "topicRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentHash",
+            "columnName": "contentHash",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "expectedWordCount",
+            "columnName": "expectedWordCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSeenCatalogRevision",
+            "columnName": "lastSeenCatalogRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "topicKey"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "topic_title",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`topicKey` TEXT NOT NULL, `language` TEXT NOT NULL, `text` TEXT NOT NULL, PRIMARY KEY(`topicKey`, `language`), FOREIGN KEY(`topicKey`) REFERENCES `topic`(`topicKey`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "topicKey",
+            "columnName": "topicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "text",
+            "columnName": "text",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "topicKey",
+            "language"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_topic_title_topicKey",
+            "unique": false,
+            "columnNames": [
+              "topicKey"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_topic_title_topicKey` ON `${TABLE_NAME}` (`topicKey`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "topic",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "topicKey"
+            ],
+            "referencedColumns": [
+              "topicKey"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "subtopic",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`subtopicUid` TEXT NOT NULL, `topicKey` TEXT NOT NULL, `remoteId` INTEGER NOT NULL, `subtopicKey` TEXT NOT NULL, `position` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `lastSeenCatalogRevision` INTEGER NOT NULL, PRIMARY KEY(`subtopicUid`), FOREIGN KEY(`topicKey`) REFERENCES `topic`(`topicKey`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "subtopicUid",
+            "columnName": "subtopicUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "topicKey",
+            "columnName": "topicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remoteId",
+            "columnName": "remoteId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtopicKey",
+            "columnName": "subtopicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSeenCatalogRevision",
+            "columnName": "lastSeenCatalogRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "subtopicUid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_subtopic_topicKey",
+            "unique": false,
+            "columnNames": [
+              "topicKey"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_subtopic_topicKey` ON `${TABLE_NAME}` (`topicKey`)"
+          },
+          {
+            "name": "index_subtopic_topicKey_remoteId",
+            "unique": true,
+            "columnNames": [
+              "topicKey",
+              "remoteId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_subtopic_topicKey_remoteId` ON `${TABLE_NAME}` (`topicKey`, `remoteId`)"
+          },
+          {
+            "name": "index_subtopic_topicKey_subtopicKey",
+            "unique": true,
+            "columnNames": [
+              "topicKey",
+              "subtopicKey"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_subtopic_topicKey_subtopicKey` ON `${TABLE_NAME}` (`topicKey`, `subtopicKey`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "topic",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "topicKey"
+            ],
+            "referencedColumns": [
+              "topicKey"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "subtopic_title",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`subtopicUid` TEXT NOT NULL, `language` TEXT NOT NULL, `text` TEXT NOT NULL, PRIMARY KEY(`subtopicUid`, `language`), FOREIGN KEY(`subtopicUid`) REFERENCES `subtopic`(`subtopicUid`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "subtopicUid",
+            "columnName": "subtopicUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "text",
+            "columnName": "text",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "subtopicUid",
+            "language"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_subtopic_title_subtopicUid",
+            "unique": false,
+            "columnNames": [
+              "subtopicUid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_subtopic_title_subtopicUid` ON `${TABLE_NAME}` (`subtopicUid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "subtopic",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "subtopicUid"
+            ],
+            "referencedColumns": [
+              "subtopicUid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "word",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wordUid` TEXT NOT NULL, `subtopicUid` TEXT NOT NULL, `remoteId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `learningRevision` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `lastSeenCatalogRevision` INTEGER NOT NULL, PRIMARY KEY(`wordUid`), FOREIGN KEY(`subtopicUid`) REFERENCES `subtopic`(`subtopicUid`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "wordUid",
+            "columnName": "wordUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtopicUid",
+            "columnName": "subtopicUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remoteId",
+            "columnName": "remoteId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "learningRevision",
+            "columnName": "learningRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSeenCatalogRevision",
+            "columnName": "lastSeenCatalogRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wordUid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_word_subtopicUid",
+            "unique": false,
+            "columnNames": [
+              "subtopicUid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_subtopicUid` ON `${TABLE_NAME}` (`subtopicUid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "subtopic",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "subtopicUid"
+            ],
+            "referencedColumns": [
+              "subtopicUid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "word_translation",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wordUid` TEXT NOT NULL, `language` TEXT NOT NULL, `text` TEXT NOT NULL, PRIMARY KEY(`wordUid`, `language`), FOREIGN KEY(`wordUid`) REFERENCES `word`(`wordUid`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "wordUid",
+            "columnName": "wordUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "text",
+            "columnName": "text",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wordUid",
+            "language"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_word_translation_wordUid",
+            "unique": false,
+            "columnNames": [
+              "wordUid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_translation_wordUid` ON `${TABLE_NAME}` (`wordUid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "word",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "wordUid"
+            ],
+            "referencedColumns": [
+              "wordUid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "word_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wordUid` TEXT NOT NULL, `sourceLanguage` TEXT NOT NULL, `targetLanguage` TEXT NOT NULL, `learningRevision` INTEGER NOT NULL, `failureCount` INTEGER NOT NULL, `correctStreak` INTEGER NOT NULL, `isLearned` INTEGER NOT NULL, `firstAnsweredAt` INTEGER, `lastAnsweredAt` INTEGER, `learnedAt` INTEGER, PRIMARY KEY(`wordUid`, `sourceLanguage`, `targetLanguage`), FOREIGN KEY(`wordUid`) REFERENCES `word`(`wordUid`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "wordUid",
+            "columnName": "wordUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceLanguage",
+            "columnName": "sourceLanguage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetLanguage",
+            "columnName": "targetLanguage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "learningRevision",
+            "columnName": "learningRevision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "failureCount",
+            "columnName": "failureCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctStreak",
+            "columnName": "correctStreak",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isLearned",
+            "columnName": "isLearned",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstAnsweredAt",
+            "columnName": "firstAnsweredAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastAnsweredAt",
+            "columnName": "lastAnsweredAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "learnedAt",
+            "columnName": "learnedAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wordUid",
+            "sourceLanguage",
+            "targetLanguage"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_word_progress_wordUid",
+            "unique": false,
+            "columnNames": [
+              "wordUid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_progress_wordUid` ON `${TABLE_NAME}` (`wordUid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "word",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "wordUid"
+            ],
+            "referencedColumns": [
+              "wordUid"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5b093a29dbdbcc64edf1896bf5198bc8')"
+    ]
+  }
+}
