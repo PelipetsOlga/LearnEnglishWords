@@ -5,6 +5,7 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.refreshing.learnenglishwords.data.local.entity.TopicEntity
 import com.refreshing.learnenglishwords.data.local.entity.TopicTitleEntity
+import com.refreshing.learnenglishwords.data.local.relation.TopicWordCount
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -18,6 +19,16 @@ interface TopicDao {
 
     @Query("SELECT * FROM topic WHERE isActive = 1 ORDER BY position ASC")
     suspend fun getActiveTopics(): List<TopicEntity>
+
+    @Query("SELECT tt.* FROM topic_title tt INNER JOIN topic t ON tt.topicKey = t.topicKey WHERE t.isActive = 1")
+    fun observeAllActiveTopicTitles(): Flow<List<TopicTitleEntity>>
+
+    @Query(
+        "SELECT s.topicKey, COUNT(w.wordUid) as wordCount " +
+            "FROM subtopic s LEFT JOIN word w ON w.subtopicUid = s.subtopicUid AND w.isActive = 1 " +
+            "WHERE s.isActive = 1 GROUP BY s.topicKey",
+    )
+    fun observeWordCountsPerTopic(): Flow<List<TopicWordCount>>
 
     @Query("SELECT * FROM topic_title WHERE topicKey = :topicKey")
     suspend fun getTitlesForTopic(topicKey: String): List<TopicTitleEntity>

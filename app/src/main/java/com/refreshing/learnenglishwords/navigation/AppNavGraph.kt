@@ -129,10 +129,8 @@ fun AppNavGraph(
             composable(
                 route = Routes.TOPIC_DETAIL,
                 arguments = listOf(navArgument("topicKey") { type = NavType.StringType }),
-            ) { backStackEntry ->
-                val topicKey = backStackEntry.arguments?.getString("topicKey") ?: ""
+            ) { _ ->
                 SubtopicsScreen(
-                    topicKey = topicKey,
                     onNavigateBack = { navController.popBackStack() },
                     onLearnClick = { subtopicUid ->
                         navController.navigate(Routes.learn(subtopicUid))
