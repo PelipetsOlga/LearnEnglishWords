@@ -21,6 +21,10 @@ interface WordDao {
     suspend fun getActiveWordsWithTranslations(subtopicUid: String): List<WordWithTranslations>
 
     @Transaction
+    @Query("SELECT * FROM word WHERE subtopicUid LIKE :topicKeyPrefix AND isActive = 1 ORDER BY position ASC")
+    suspend fun getActiveWordsWithTranslationsForTopic(topicKeyPrefix: String): List<WordWithTranslations>
+
+    @Transaction
     @Query("SELECT * FROM word WHERE isActive = 1 ORDER BY position ASC")
     fun observeAllActiveWordsWithTranslations(): Flow<List<WordWithTranslations>>
 

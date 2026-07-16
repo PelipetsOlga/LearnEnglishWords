@@ -15,6 +15,8 @@ import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -42,6 +44,7 @@ fun SubtopicsScreen(
     onNavigateBack: () -> Unit,
     onLearnClick: (subtopicUid: String) -> Unit,
     onQuizClick: (subtopicUid: String) -> Unit,
+    onQuizTopicClick: (topicKey: String) -> Unit,
     viewModel: SubtopicsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -51,6 +54,7 @@ fun SubtopicsScreen(
             when (effect) {
                 is SubtopicsEffect.NavigateToLearn -> onLearnClick(effect.subtopicUid)
                 is SubtopicsEffect.NavigateToQuiz -> onQuizClick(effect.subtopicUid)
+                is SubtopicsEffect.NavigateToQuizTopic -> onQuizTopicClick(effect.topicKey)
             }
         }
     }
@@ -73,6 +77,22 @@ fun SubtopicsScreen(
                     }
                 },
             )
+        },
+        bottomBar = {
+            BottomAppBar {
+                Box(
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Button(
+                        onClick = { viewModel.onIntent(SubtopicsIntent.QuizTopicClicked) },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Icon(Icons.Default.Quiz, contentDescription = null)
+                        Text("Quiz", modifier = Modifier.padding(start = 8.dp))
+                    }
+                }
+            }
         },
     ) { innerPadding ->
         if (state.isLoading) {
@@ -103,10 +123,13 @@ fun SubtopicsScreen(
     }
 
     if (state.resetConfirmSubtopicUid != null) {
+        val subtopicTitle = state.subtopics
+            .find { it.subtopicUid == state.resetConfirmSubtopicUid }?.title
+            ?: state.resetConfirmSubtopicUid
         AlertDialog(
             onDismissRequest = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicDismissed) },
             title = { Text("Reset subtopic progress?") },
-            text = { Text("All progress for this subtopic will be deleted. This cannot be undone.") },
+            text = { Text("All progress for \"$subtopicTitle\" will be deleted. This cannot be undone.") },
             confirmButton = {
                 TextButton(onClick = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicConfirmed) }) {
                     Text("Reset", color = MaterialTheme.colorScheme.error)

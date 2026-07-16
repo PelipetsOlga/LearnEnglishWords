@@ -18,6 +18,9 @@ class ProgressRepositoryImpl @Inject constructor(
     override suspend fun getProgressForSubtopic(subtopicUid: String): List<WordProgressEntity> =
         progressDao.getProgressForSubtopic(subtopicUid)
 
+    override suspend fun getProgressForTopic(topicKey: String): List<WordProgressEntity> =
+        progressDao.getProgressForTopic(topicKey)
+
     override suspend fun upsertProgress(progress: WordProgressEntity) =
         progressDao.upsertProgress(progress)
 

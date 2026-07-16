@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -18,8 +16,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -81,17 +77,6 @@ fun ProgressScreen(
                 }
             }
 
-            // Per-topic breakdown
-            if (state.topics.isNotEmpty()) {
-                Text("By topic", style = MaterialTheme.typography.titleMedium)
-                state.topics.forEach { row ->
-                    TopicProgressCard(
-                        row = row,
-                        onResetClick = { viewModel.onIntent(ProgressIntent.ResetTopicRequested(row.topicKey)) },
-                    )
-                }
-            }
-
             // Failure total
             if (state.overall.failureCount > 0) {
                 Text(
@@ -130,23 +115,6 @@ fun ProgressScreen(
         )
     }
 
-    if (state.resetTopicConfirmKey != null) {
-        AlertDialog(
-            onDismissRequest = { viewModel.onIntent(ProgressIntent.ResetTopicDismissed) },
-            title = { Text("Reset topic progress?") },
-            text = { Text("All progress for this topic will be deleted.") },
-            confirmButton = {
-                TextButton(onClick = { viewModel.onIntent(ProgressIntent.ResetTopicConfirmed) }) {
-                    Text("Reset", color = MaterialTheme.colorScheme.error)
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { viewModel.onIntent(ProgressIntent.ResetTopicDismissed) }) {
-                    Text("Cancel")
-                }
-            },
-        )
-    }
 }
 
 @Composable
@@ -197,43 +165,3 @@ private fun DirectionRow(dir: ProgressAggregator.DirectionStats) {
     }
 }
 
-@Composable
-private fun TopicProgressCard(
-    row: TopicProgressRow,
-    onResetClick: () -> Unit,
-) {
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    text = row.title,
-                    style = MaterialTheme.typography.titleSmall,
-                    modifier = Modifier.weight(1f),
-                )
-                Text(
-                    text = "${row.stats.percent}%",
-                    style = MaterialTheme.typography.bodyLarge,
-                )
-                IconButton(onClick = onResetClick) {
-                    Icon(
-                        Icons.Default.Refresh,
-                        contentDescription = "Reset progress for ${row.title}",
-                    )
-                }
-            }
-            LinearProgressIndicator(
-                progress = { row.stats.percent / 100f },
-                modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
-            )
-            Text(
-                text = "${row.stats.learnedCount}/${row.stats.totalCount}",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
-}

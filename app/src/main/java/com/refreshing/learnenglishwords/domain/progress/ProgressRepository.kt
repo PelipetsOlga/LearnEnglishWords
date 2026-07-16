@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 interface ProgressRepository {
     fun observeAllActiveProgress(): Flow<List<WordProgressEntity>>
     suspend fun getProgressForSubtopic(subtopicUid: String): List<WordProgressEntity>
+    suspend fun getProgressForTopic(topicKey: String): List<WordProgressEntity>
     suspend fun upsertProgress(progress: WordProgressEntity)
     suspend fun resetAll()
     suspend fun resetTopic(topicKey: String)

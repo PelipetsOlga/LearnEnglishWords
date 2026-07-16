@@ -72,6 +72,9 @@ class SubtopicsViewModel @Inject constructor(
                 _uiState.value = _uiState.value.copy(resetConfirmTopic = false)
                 viewModelScope.launch { progressRepository.resetTopic(topicKey) }
             }
+
+            SubtopicsIntent.QuizTopicClicked ->
+                viewModelScope.launch { _effects.send(SubtopicsEffect.NavigateToQuizTopic(topicKey)) }
         }
     }
 }

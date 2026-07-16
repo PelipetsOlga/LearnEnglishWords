@@ -41,12 +41,14 @@ object Routes {
     const val TOPIC_DETAIL = "topic/{topicKey}"
     const val LEARN = "learn/{subtopicUid}"
     const val QUIZ = "quiz/{subtopicUid}"
+    const val QUIZ_TOPIC = "quizTopic/{topicKey}"
     const val PROGRESS = "progress"
     const val SETTINGS = "settings"
 
     fun topicDetail(topicKey: String) = "topic/$topicKey"
     fun learn(subtopicUid: String) = "learn/${Uri.encode(subtopicUid)}"
     fun quiz(subtopicUid: String) = "quiz/${Uri.encode(subtopicUid)}"
+    fun quizTopic(topicKey: String) = "quizTopic/${Uri.encode(topicKey)}"
 }
 
 // ---------------------------------------------------------------------------
@@ -144,6 +146,9 @@ fun AppNavGraph(
                     onQuizClick = { subtopicUid ->
                         navController.navigate(Routes.quiz(subtopicUid))
                     },
+                    onQuizTopicClick = { topicKey ->
+                        navController.navigate(Routes.quizTopic(topicKey))
+                    },
                 )
             }
 
@@ -165,6 +170,15 @@ fun AppNavGraph(
             composable(
                 route = Routes.QUIZ,
                 arguments = listOf(navArgument("subtopicUid") { type = NavType.StringType }),
+            ) { _ ->
+                QuizScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                )
+            }
+
+            composable(
+                route = Routes.QUIZ_TOPIC,
+                arguments = listOf(navArgument("topicKey") { type = NavType.StringType }),
             ) { _ ->
                 QuizScreen(
                     onNavigateBack = { navController.popBackStack() },

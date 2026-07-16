@@ -34,11 +34,14 @@ class QuizViewModel @Inject constructor(
     private val analyticsTracker: AnalyticsTracker,
 ) : ViewModel() {
 
-    private val subtopicUid: String =
-        Uri.decode(checkNotNull(savedStateHandle["subtopicUid"]))
+    private val subtopicUid: String? =
+        savedStateHandle.get<String>("subtopicUid")?.let { Uri.decode(it) }
 
-    // subtopicKey is the last segment of "topicKey/subtopicKey"
-    private val subtopicKey: String = subtopicUid.substringAfterLast("/")
+    private val topicKey: String? = savedStateHandle.get<String>("topicKey")
+
+    // Used for analytics; falls back to topicKey for topic-wide quizzes
+    private val trackingKey: String =
+        subtopicUid?.substringAfterLast("/") ?: topicKey ?: ""
 
     private val _uiState = MutableStateFlow(QuizUiState())
     val uiState: StateFlow<QuizUiState> = _uiState.asStateFlow()
@@ -64,8 +67,16 @@ class QuizViewModel @Inject constructor(
         // Quiz uses a single language chosen in Settings
         val orderedSelected = listOf(settings.quizLanguage).filter { it in availableLangs }
 
-        val wordEntries = catalogRepository.observeWordEntries(subtopicUid).first()
-        val progressList = progressRepository.getProgressForSubtopic(subtopicUid)
+        val wordEntries = when {
+            subtopicUid != null -> catalogRepository.observeWordEntries(subtopicUid).first()
+            topicKey != null -> catalogRepository.getWordEntriesForTopic(topicKey)
+            else -> emptyList()
+        }
+        val progressList = when {
+            subtopicUid != null -> progressRepository.getProgressForSubtopic(subtopicUid)
+            topicKey != null -> progressRepository.getProgressForTopic(topicKey)
+            else -> emptyList()
+        }
 
         val progressByWord = progressList.groupBy { it.wordUid }.mapValues { (_, rows) ->
             rows.associate { (it.sourceLanguage to it.targetLanguage) to it }
@@ -94,7 +105,7 @@ class QuizViewModel @Inject constructor(
         if (tasks.isEmpty()) {
             _uiState.value = QuizUiState(isLoading = false, isEmpty = true)
         } else {
-            analyticsTracker.trackQuizStart(subtopicKey)
+            analyticsTracker.trackQuizStart(trackingKey)
             showCurrentTask()
         }
     }
@@ -121,10 +132,15 @@ class QuizViewModel @Inject constructor(
         val task = queue.firstOrNull() ?: return
         val isCorrect = selected.trim().lowercase() == task.correctAnswer.trim().lowercase()
         questionsAnswered++
-        analyticsTracker.trackQuizAnswer(subtopicKey, isCorrect)
+        analyticsTracker.trackQuizAnswer(trackingKey, isCorrect)
 
         viewModelScope.launch {
-            val existing = progressRepository.getProgressForSubtopic(subtopicUid)
+            val existingList = when {
+                subtopicUid != null -> progressRepository.getProgressForSubtopic(subtopicUid)
+                topicKey != null -> progressRepository.getProgressForTopic(topicKey)
+                else -> emptyList()
+            }
+            val existing = existingList
                 .find { it.wordUid == task.wordUid && it.sourceLanguage == task.sourceLanguage && it.targetLanguage == task.targetLanguage }
 
             val updated = evaluateQuizAnswer.evaluate(
@@ -158,7 +174,7 @@ class QuizViewModel @Inject constructor(
 
     private fun advance() {
         if (queue.isEmpty()) {
-            analyticsTracker.trackQuizComplete(subtopicKey)
+            analyticsTracker.trackQuizComplete(trackingKey)
             _uiState.value = _uiState.value.copy(
                 isComplete = true,
                 currentTask = null,

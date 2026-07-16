@@ -12,4 +12,5 @@ interface CatalogRepository {
     fun observeMainLanguage(): Flow<String>
     fun observeWordEntries(subtopicUid: String): Flow<List<WordEntry>>
     fun observeAllWordEntries(): Flow<List<WordEntry>>
+    suspend fun getWordEntriesForTopic(topicKey: String): List<WordEntry>
 }

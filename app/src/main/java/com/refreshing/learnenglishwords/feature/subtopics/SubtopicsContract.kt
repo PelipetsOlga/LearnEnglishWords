@@ -20,9 +20,11 @@ sealed interface SubtopicsIntent {
     data object ResetTopicRequested : SubtopicsIntent
     data object ResetTopicConfirmed : SubtopicsIntent
     data object ResetTopicDismissed : SubtopicsIntent
+    data object QuizTopicClicked : SubtopicsIntent
 }
 
 sealed interface SubtopicsEffect {
     data class NavigateToLearn(val subtopicUid: String) : SubtopicsEffect
     data class NavigateToQuiz(val subtopicUid: String) : SubtopicsEffect
+    data class NavigateToQuizTopic(val topicKey: String) : SubtopicsEffect
 }

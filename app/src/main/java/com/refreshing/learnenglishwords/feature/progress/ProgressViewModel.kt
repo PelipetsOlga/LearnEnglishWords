@@ -29,17 +29,12 @@ class ProgressViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             combine(
-                combine(
-                    catalogRepository.observeAllWordEntries(),
-                    progressRepository.observeAllActiveProgress(),
-                    settingsRepository.observeSettings(),
-                ) { words, progress, settings -> Triple(words, progress, settings) },
-                combine(
-                    settingsRepository.observeAvailableLanguages(),
-                    catalogRepository.observeMainLanguage(),
-                    catalogRepository.observeTopics(),
-                ) { availableLangs, mainLang, topics -> Triple(availableLangs, mainLang, topics) },
-            ) { (words, progressList, settings), (availableLangs, mainLang, topics) ->
+                catalogRepository.observeAllWordEntries(),
+                progressRepository.observeAllActiveProgress(),
+                settingsRepository.observeSettings(),
+                settingsRepository.observeAvailableLanguages(),
+                catalogRepository.observeMainLanguage(),
+            ) { words, progressList, settings, availableLangs, mainLang ->
                 val orderedSelected = availableLangs.filter { it in settings.selectedLanguages }
                 val progressMap = progressList.associateBy {
                     Triple(it.wordUid, it.sourceLanguage, it.targetLanguage)
@@ -47,22 +42,10 @@ class ProgressViewModel @Inject constructor(
                 val overall = ProgressAggregator.compute(
                     words, progressMap, mainLang, orderedSelected, settings.translationDirection,
                 )
-                val byTopic = ProgressAggregator.computePerTopic(
-                    words, progressMap, mainLang, orderedSelected, settings.translationDirection,
-                )
-                val topicRows = topics.map { topic ->
-                    TopicProgressRow(
-                        topicKey = topic.topicKey,
-                        title = topic.title,
-                        stats = byTopic[topic.topicKey] ?: ProgressAggregator.Stats.empty,
-                    )
-                }
                 ProgressUiState(
                     isLoading = false,
                     overall = overall,
-                    topics = topicRows,
                     resetAllConfirm = _uiState.value.resetAllConfirm,
-                    resetTopicConfirmKey = _uiState.value.resetTopicConfirmKey,
                 )
             }.collect { _uiState.value = it }
         }
@@ -81,21 +64,6 @@ class ProgressViewModel @Inject constructor(
                 viewModelScope.launch {
                     progressRepository.resetAll()
                     analyticsTracker.trackProgressReset("all", null)
-                }
-            }
-
-            is ProgressIntent.ResetTopicRequested ->
-                _uiState.value = _uiState.value.copy(resetTopicConfirmKey = intent.topicKey)
-
-            ProgressIntent.ResetTopicDismissed ->
-                _uiState.value = _uiState.value.copy(resetTopicConfirmKey = null)
-
-            ProgressIntent.ResetTopicConfirmed -> {
-                val key = _uiState.value.resetTopicConfirmKey ?: return
-                _uiState.value = _uiState.value.copy(resetTopicConfirmKey = null)
-                viewModelScope.launch {
-                    progressRepository.resetTopic(key)
-                    analyticsTracker.trackProgressReset(key, null)
                 }
             }
         }
