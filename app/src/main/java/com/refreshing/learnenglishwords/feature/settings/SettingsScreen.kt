@@ -41,7 +41,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.core.model.QuizOrder
 import com.refreshing.learnenglishwords.core.model.TranslationDirection
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -52,6 +54,76 @@ import com.refreshing.learnenglishwords.ui.theme.AppTealContainer
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewVocabularyCard() {
+    LearnEnglishWordsTheme {
+        SettingsCard {
+            SectionLabel("Vocabulary")
+            Spacer(Modifier.height(8.dp))
+            SubLabel("Display languages")
+            Spacer(Modifier.height(6.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf("en", "uk", "pl").forEach { lang ->
+                    FilterChip(
+                        selected = lang == "en",
+                        onClick = {},
+                        label = { Text(langLabel(lang)) },
+                        colors = FilterChipDefaults.filterChipColors(
+                            selectedContainerColor = AppTeal,
+                            selectedLabelColor = AppCardSurface,
+                            containerColor = AppTealContainer,
+                            labelColor = AppNavy,
+                        ),
+                        border = FilterChipDefaults.filterChipBorder(
+                            enabled = true,
+                            selected = lang == "en",
+                            borderColor = AppOutline,
+                            selectedBorderColor = AppTeal,
+                        ),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewQuizCard() {
+    LearnEnglishWordsTheme {
+        SettingsCard {
+            SectionLabel("Quiz")
+            Spacer(Modifier.height(8.dp))
+            SubLabel("Translation direction")
+            TranslationDirection.entries.forEach { direction ->
+                RadioRow(
+                    label = directionLabel(direction),
+                    selected = direction == TranslationDirection.BOTH,
+                    onClick = {},
+                )
+            }
+        }
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewCatalogCard() {
+    LearnEnglishWordsTheme {
+        SettingsCard {
+            SectionLabel("Catalog")
+            Spacer(Modifier.height(8.dp))
+            Text("Version: 1.0.0", style = MaterialTheme.typography.bodyMedium, color = AppGray)
+            Text("Generated: 2025-07-17 10:00", style = MaterialTheme.typography.bodyMedium, color = AppGray)
+        }
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

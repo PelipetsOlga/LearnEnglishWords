@@ -38,7 +38,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.domain.progress.ProgressAggregator
 import com.refreshing.learnenglishwords.ui.design.LangBadge
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -46,6 +48,48 @@ import com.refreshing.learnenglishwords.ui.theme.AppOutline
 import com.refreshing.learnenglishwords.ui.theme.AppPrimary
 import com.refreshing.learnenglishwords.ui.theme.AppPrimaryContainer
 import com.refreshing.learnenglishwords.ui.theme.AppRed
+
+// ---------------------------------------------------------------------------
+// Preview data
+// ---------------------------------------------------------------------------
+
+private val previewStats = ProgressAggregator.Stats(
+    learnedCount = 42,
+    totalCount = 100,
+    directions = listOf(
+        ProgressAggregator.DirectionStats("en", "uk", 30, 50),
+        ProgressAggregator.DirectionStats("uk", "en", 12, 50),
+    ),
+    failureCount = 7,
+)
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewOverallCard() {
+    LearnEnglishWordsTheme {
+        OverallCard(stats = previewStats)
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewDirectionRowPreview() {
+    LearnEnglishWordsTheme {
+        DirectionRow(dir = ProgressAggregator.DirectionStats("en", "uk", 30, 50))
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewCircularGaugeCard() {
+    LearnEnglishWordsTheme {
+        CircularGauge(percent = 42, modifier = androidx.compose.ui.Modifier.size(88.dp))
+    }
+}
 
 @Composable
 fun ProgressScreen(

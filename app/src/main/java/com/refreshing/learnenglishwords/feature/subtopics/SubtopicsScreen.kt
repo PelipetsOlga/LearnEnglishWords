@@ -49,7 +49,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.core.model.Subtopic
 import com.refreshing.learnenglishwords.ui.design.AccentAvatar
 import com.refreshing.learnenglishwords.ui.design.accentColorAt
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -216,6 +218,46 @@ fun SubtopicsScreen(
                 }
             },
         )
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewSubtopicCardNoProgress() {
+    LearnEnglishWordsTheme {
+        SubtopicCard(
+            subtopic = Subtopic("animals/wild", "animals", "Wild Animals", 20, 0),
+            index = 0,
+            onLearnClick = {},
+            onQuizClick = {},
+            onResetClick = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewSubtopicCardWithProgress() {
+    LearnEnglishWordsTheme {
+        SubtopicCard(
+            subtopic = Subtopic("animals/domestic", "animals", "Domestic Animals", 15, 73),
+            index = 1,
+            onLearnClick = {},
+            onQuizClick = {},
+            onResetClick = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewAllWordsCardPreview() {
+    LearnEnglishWordsTheme {
+        AllWordsCard(onClick = {})
     }
 }
 

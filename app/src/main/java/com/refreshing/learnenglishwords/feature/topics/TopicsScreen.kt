@@ -38,7 +38,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.core.model.Topic
 import com.refreshing.learnenglishwords.ui.design.accentColorAt
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -96,6 +98,34 @@ fun TopicsScreen(
             }
             item(key = "__bottom__") { Spacer(Modifier.height(8.dp)) }
         }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewTopicCardNoProgress() {
+    LearnEnglishWordsTheme {
+        TopicCard(topic = Topic("animals", "Animals", 42, 0), index = 0, onClick = {})
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewTopicCardWithProgress() {
+    LearnEnglishWordsTheme {
+        TopicCard(topic = Topic("food", "Food & Drinks", 30, 65), index = 1, onClick = {})
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewTopicCardComplete() {
+    LearnEnglishWordsTheme {
+        TopicCard(topic = Topic("travel", "Travel", 18, 100), index = 2, onClick = {})
     }
 }
 

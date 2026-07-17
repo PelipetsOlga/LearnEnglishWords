@@ -44,9 +44,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.refreshing.learnenglishwords.core.model.QuizTask
 import com.refreshing.learnenglishwords.ui.design.LangBadge
 import com.refreshing.learnenglishwords.ui.design.WordCardGradient
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -57,6 +60,99 @@ import com.refreshing.learnenglishwords.ui.theme.AppTeal
 
 private val AnswerCorrect = Color(0xFF4CAF50)
 private val AnswerWrong = Color(0xFFF44336)
+
+// ---------------------------------------------------------------------------
+// Preview data
+// ---------------------------------------------------------------------------
+
+private val previewTask = QuizTask(
+    wordUid = "animals/1",
+    sourceLanguage = "en",
+    targetLanguage = "uk",
+    prompt = "apple",
+    correctAnswer = "яблуко",
+    options = listOf("яблуко", "банан", "апельсин", "груша"),
+)
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewQuestionUnanswered() {
+    LearnEnglishWordsTheme {
+        QuestionContent(
+            state = QuizUiState(isLoading = false, currentTask = previewTask, currentIndex = 2, totalTasks = 10),
+            onOptionSelected = {},
+            onContinue = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewQuestionCorrect() {
+    LearnEnglishWordsTheme {
+        QuestionContent(
+            state = QuizUiState(
+                isLoading = false,
+                currentTask = previewTask,
+                currentIndex = 2,
+                totalTasks = 10,
+                selectedOption = "яблуко",
+                isCorrect = true,
+            ),
+            onOptionSelected = {},
+            onContinue = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewQuestionWrong() {
+    LearnEnglishWordsTheme {
+        QuestionContent(
+            state = QuizUiState(
+                isLoading = false,
+                currentTask = previewTask,
+                currentIndex = 2,
+                totalTasks = 10,
+                selectedOption = "банан",
+                isCorrect = false,
+            ),
+            onOptionSelected = {},
+            onContinue = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewCompletionSummaryCard() {
+    LearnEnglishWordsTheme {
+        CompletionSummary(
+            state = QuizUiState(
+                isLoading = false,
+                isComplete = true,
+                questionsAnswered = 15,
+                mistakeCount = 3,
+                newlyLearnedCount = 8,
+                remainingCount = 4,
+            ),
+            onClose = {},
+        )
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewEmptyQuizCard() {
+    LearnEnglishWordsTheme {
+        EmptyQuizContent(onClose = {})
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

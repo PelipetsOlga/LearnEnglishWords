@@ -40,7 +40,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.refreshing.learnenglishwords.ui.design.LangBadge
 import com.refreshing.learnenglishwords.ui.design.SparkleIcon
+import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
@@ -134,6 +136,49 @@ fun LearnScreen(
                 }
             }
         }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Previews
+// ---------------------------------------------------------------------------
+
+@PreviewMb
+@Composable
+private fun PreviewWordRowNone() {
+    LearnEnglishWordsTheme {
+        WordRow(LearnWordItem("1", "apple", listOf("uk" to "яблуко"), WordStatus.NONE))
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewWordRowLearned() {
+    LearnEnglishWordsTheme {
+        WordRow(LearnWordItem("2", "beautiful", listOf("uk" to "гарний"), WordStatus.LEARNED))
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewWordRowMistakes() {
+    LearnEnglishWordsTheme {
+        WordRow(LearnWordItem("3", "knowledge", listOf("uk" to "знання"), WordStatus.HAS_MISTAKES))
+    }
+}
+
+@PreviewMb
+@Composable
+private fun PreviewWordRowMultiLang() {
+    LearnEnglishWordsTheme {
+        WordRow(
+            LearnWordItem(
+                "4",
+                "cat",
+                listOf("uk" to "кіт", "pl" to "kot"),
+                WordStatus.LEARNED,
+            ),
+        )
     }
 }
 
