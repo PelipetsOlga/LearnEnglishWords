@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -40,12 +39,10 @@ import com.refreshing.learnenglishwords.core.model.Topic
 import com.refreshing.learnenglishwords.ui.design.accentColorAt
 import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
-import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
-import com.refreshing.learnenglishwords.ui.theme.AppOutline
-import com.refreshing.learnenglishwords.ui.theme.AppPrimary
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 
 @Composable
 fun TopicsScreen(
@@ -65,7 +62,9 @@ fun TopicsScreen(
     Scaffold(containerColor = AppBackground) { innerPadding ->
         if (state.isLoading) {
             Box(
-                Modifier.fillMaxSize().padding(innerPadding),
+                Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding),
                 contentAlignment = Alignment.Center,
             ) {
                 CircularProgressIndicator()
@@ -83,7 +82,7 @@ fun TopicsScreen(
             item(key = "__title__") {
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Topics",
+                    text = "Learn English Words",
                     style = MaterialTheme.typography.headlineMedium,
                     color = AppNavy,
                     modifier = Modifier.padding(bottom = 4.dp),
@@ -109,23 +108,13 @@ fun TopicsScreen(
 @Composable
 private fun PreviewTopicCardNoProgress() {
     LearnEnglishWordsTheme {
-        TopicCard(topic = Topic("animals", "Animals", 42, 0), index = 0, onClick = {})
-    }
-}
-
-@PreviewMb
-@Composable
-private fun PreviewTopicCardWithProgress() {
-    LearnEnglishWordsTheme {
-        TopicCard(topic = Topic("food", "Food & Drinks", 30, 65), index = 1, onClick = {})
-    }
-}
-
-@PreviewMb
-@Composable
-private fun PreviewTopicCardComplete() {
-    LearnEnglishWordsTheme {
-        TopicCard(topic = Topic("travel", "Travel", 18, 100), index = 2, onClick = {})
+        Column(modifier = Modifier.fillMaxWidth()) {
+            TopicCard(topic = Topic("animals", "Animals", 42, 0), index = 0, onClick = {})
+            Spacer(modifier = Modifier.height(16.dp))
+            TopicCard(topic = Topic("food", "Food & Drinks", 30, 65), index = 1, onClick = {})
+            Spacer(modifier = Modifier.height(16.dp))
+            TopicCard(topic = Topic("travel", "Travel", 18, 100), index = 2, onClick = {})
+        }
     }
 }
 
@@ -143,27 +132,27 @@ private fun TopicCard(
         colors = CardDefaults.cardColors(containerColor = AppCardSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
     ) {
-        Row(modifier = Modifier.fillMaxWidth()) {
-            // Left colored accent panel with notebook holes
-            Box(
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(accent)
+                .padding(start = 10.dp)
+        ) {
+            Row(
                 modifier = Modifier
-                    .width(10.dp)
-                    .fillMaxHeight()
-                    .background(accent),
-            )
-            Box(
-                modifier = Modifier
-                    .width(28.dp)
-                    .fillMaxHeight()
-                    .background(accent.copy(alpha = 0.08f)),
-                contentAlignment = Alignment.Center,
+                    .fillMaxWidth()
+                    .background(Color.White)
+                    .background(accent.copy(alpha = 0.08f))
             ) {
+
                 Column(
-                    modifier = Modifier.fillMaxHeight().padding(vertical = 12.dp),
-                    verticalArrangement = Arrangement.SpaceEvenly,
+                    modifier = Modifier
+                        .width(32.dp)
+                        .padding(vertical = 16.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    repeat(3) {
+                    repeat(4) {
                         Box(
                             modifier = Modifier
                                 .size(8.dp)
@@ -171,40 +160,44 @@ private fun TopicCard(
                                 .background(AppBackground),
                         )
                     }
+
                 }
-            }
-            // Content
-            Column(
-                modifier = Modifier
-                    .weight(1f)
-                    .padding(horizontal = 16.dp, vertical = 14.dp),
-            ) {
-                Text(
-                    text = topic.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = AppNavy,
-                )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    text = "${topic.wordCount} words",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = AppGray,
-                )
-                if (topic.progressPercent > 0) {
-                    Spacer(Modifier.height(8.dp))
-                    LinearProgressIndicator(
-                        progress = { topic.progressPercent / 100f },
-                        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(4.dp)),
-                        color = accent,
-                        trackColor = accent.copy(alpha = 0.18f),
-                    )
-                    Spacer(Modifier.height(2.dp))
+                // Content
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(AppCardSurface)
+                        .padding(horizontal = 16.dp, vertical = 16.dp),
+                ) {
                     Text(
-                        text = "${topic.progressPercent}%",
-                        fontSize = 11.sp,
-                        color = accent,
-                        fontWeight = FontWeight.SemiBold,
+                        text = topic.title,
+                        style = MaterialTheme.typography.titleLarge,
+                        color = AppNavy,
                     )
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        text = "${topic.wordCount} words",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = AppGray,
+                    )
+                    if (topic.progressPercent > 0) {
+                        Spacer(Modifier.height(8.dp))
+                        LinearProgressIndicator(
+                            progress = { topic.progressPercent / 100f },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(4.dp)),
+                            color = accent,
+                            trackColor = accent.copy(alpha = 0.18f),
+                        )
+                        Spacer(Modifier.height(8.dp))
+                        Text(
+                            text = "${topic.progressPercent}%",
+                            color = accent,
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                    }
                 }
             }
         }
