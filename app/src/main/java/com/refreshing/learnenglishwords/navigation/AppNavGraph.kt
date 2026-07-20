@@ -23,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.testTag
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -93,10 +94,14 @@ fun AppNavGraph(
     Scaffold(
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar(containerColor = AppCardSurface) {
+                NavigationBar(
+                    modifier = Modifier.testTag("bottom_nav"),
+                    containerColor = AppCardSurface,
+                ) {
                     bottomNavItems.forEach { item ->
                         NavigationBarItem(
                             selected = currentRoute == item.route,
+                            modifier = Modifier.testTag("nav_${item.route}"),
                             onClick = {
                                 if (currentRoute != item.route) {
                                     navController.navigate(item.route) {

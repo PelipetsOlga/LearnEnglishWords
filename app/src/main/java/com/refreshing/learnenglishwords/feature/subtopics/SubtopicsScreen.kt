@@ -42,6 +42,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -135,7 +136,8 @@ fun SubtopicsScreen(
                         onClick = { viewModel.onIntent(SubtopicsIntent.QuizTopicClicked) },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(52.dp),
+                            .height(52.dp)
+                            .testTag("quiz_all_button"),
                         shape = RoundedCornerShape(14.dp),
                         colors = ButtonDefaults.buttonColors(containerColor = AppPrimary),
                     ) {
@@ -164,7 +166,8 @@ fun SubtopicsScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
-                    .padding(horizontal = 20.dp, vertical = 8.dp),
+                    .padding(horizontal = 20.dp, vertical = 8.dp)
+                    .testTag("subtopics_list"),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 itemsIndexed(state.subtopics, key = { _, s -> s.subtopicUid }) { index, subtopic ->
@@ -279,6 +282,7 @@ private fun SubtopicCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .testTag("subtopic_card")
             .clickableNoRipple { onLearnClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = AppCardSurface),
@@ -349,7 +353,8 @@ private fun SubtopicCard(
                     onClick = onQuizClick,
                     modifier = Modifier
                         .padding(start = 8.dp)
-                        .size(48.dp),
+                        .size(48.dp)
+                        .testTag("subtopic_quiz_button"),
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = AppPrimary.copy(alpha = 0.10f),
                     ),
@@ -371,7 +376,9 @@ private fun SubtopicCard(
 private fun AllWordsCard(onClick: () -> Unit) {
     Card(
         onClick = onClick,
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("all_words_card"),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = AppCardSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),

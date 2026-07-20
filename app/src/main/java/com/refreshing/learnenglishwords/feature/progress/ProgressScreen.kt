@@ -31,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -113,7 +114,8 @@ fun ProgressScreen(
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
                 .padding(innerPadding)
-                .padding(horizontal = 20.dp, vertical = 16.dp),
+                .padding(horizontal = 20.dp, vertical = 16.dp)
+                .testTag("progress_content"),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(
@@ -162,7 +164,10 @@ fun ProgressScreen(
             Button(
                 onClick = { viewModel.onIntent(ProgressIntent.ResetAllRequested) },
                 colors = ButtonDefaults.buttonColors(containerColor = AppRed),
-                modifier = Modifier.fillMaxWidth().height(52.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(52.dp)
+                    .testTag("reset_all_button"),
                 shape = RoundedCornerShape(14.dp),
             ) {
                 Text("Reset all progress", style = MaterialTheme.typography.titleSmall)
@@ -192,7 +197,9 @@ fun ProgressScreen(
 @Composable
 private fun OverallCard(stats: ProgressAggregator.Stats) {
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("progress_overall_card"),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = AppCardSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),

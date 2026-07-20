@@ -40,6 +40,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -190,7 +191,9 @@ fun QuizScreen(
                     IconButton(
                         onClick = { viewModel.onIntent(QuizIntent.CloseClicked) },
                         colors = IconButtonDefaults.iconButtonColors(containerColor = AppCardSurface),
-                        modifier = Modifier.clip(CircleShape),
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .testTag("quiz_close_button"),
                     ) {
                         Icon(Icons.Default.Close, contentDescription = "Close quiz", tint = AppNavy)
                     }
@@ -285,6 +288,7 @@ private fun QuestionContent(
                     style = MaterialTheme.typography.headlineMedium,
                     color = Color.White,
                     textAlign = TextAlign.Center,
+                    modifier = Modifier.testTag("quiz_prompt"),
                 )
             }
         }
@@ -304,6 +308,7 @@ private fun QuestionContent(
                 onClick = { if (state.selectedOption == null) onOptionSelected(option) },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .testTag("quiz_option")
                     .border(1.5.dp, borderColor, RoundedCornerShape(12.dp)),
                 shape = RoundedCornerShape(12.dp),
                 colors = CardDefaults.cardColors(containerColor = bgColor),
@@ -325,7 +330,10 @@ private fun QuestionContent(
             Spacer(Modifier.weight(1f))
             Button(
                 onClick = onContinue,
-                modifier = Modifier.fillMaxWidth().height(52.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(52.dp)
+                    .testTag("quiz_continue_button"),
                 shape = RoundedCornerShape(14.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = AppPrimary),
             ) {
@@ -343,7 +351,8 @@ private fun CompletionSummary(state: QuizUiState, onClose: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(24.dp),
+            .padding(24.dp)
+            .testTag("quiz_summary"),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -390,6 +399,7 @@ private fun SummaryRow(label: String, value: String) {
 @Composable
 private fun EmptyQuizContent(onClose: () -> Unit) {
     Column(
+        modifier = Modifier.testTag("quiz_empty"),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
