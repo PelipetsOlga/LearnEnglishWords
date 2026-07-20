@@ -132,7 +132,7 @@ fun LearnScreen(
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = AppPrimary),
                 ) {
-                    Text("Start Quiz", style = MaterialTheme.typography.titleSmall)
+                    Text("Start Quiz", style = MaterialTheme.typography.titleMedium)
                 }
             }
         }

@@ -30,7 +30,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -46,16 +45,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import clickableNoRipple
 import com.refreshing.learnenglishwords.core.model.Subtopic
-import com.refreshing.learnenglishwords.ui.design.AccentAvatar
 import com.refreshing.learnenglishwords.ui.design.accentColorAt
 import com.refreshing.learnenglishwords.ui.preview.PreviewMb
 import com.refreshing.learnenglishwords.ui.theme.AppBackground
-import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 import com.refreshing.learnenglishwords.ui.theme.AppCardSurface
 import com.refreshing.learnenglishwords.ui.theme.AppGray
 import com.refreshing.learnenglishwords.ui.theme.AppNavy
 import com.refreshing.learnenglishwords.ui.theme.AppPrimary
+import com.refreshing.learnenglishwords.ui.theme.LearnEnglishWordsTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -127,12 +126,16 @@ fun SubtopicsScreen(
         bottomBar = {
             BottomAppBar(containerColor = AppBackground) {
                 Box(
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 4.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp, vertical = 4.dp),
                     contentAlignment = Alignment.Center,
                 ) {
                     Button(
                         onClick = { viewModel.onIntent(SubtopicsIntent.QuizTopicClicked) },
-                        modifier = Modifier.fillMaxWidth().height(52.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(52.dp),
                         shape = RoundedCornerShape(14.dp),
                         colors = ButtonDefaults.buttonColors(containerColor = AppPrimary),
                     ) {
@@ -140,7 +143,7 @@ fun SubtopicsScreen(
                         Text(
                             "Quiz all",
                             modifier = Modifier.padding(start = 8.dp),
-                            style = MaterialTheme.typography.titleSmall,
+                            style = MaterialTheme.typography.titleMedium,
                         )
                     }
                 }
@@ -149,7 +152,9 @@ fun SubtopicsScreen(
     ) { innerPadding ->
         if (state.isLoading) {
             Box(
-                Modifier.fillMaxSize().padding(innerPadding),
+                Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding),
                 contentAlignment = Alignment.Center,
             ) {
                 CircularProgressIndicator()
@@ -168,7 +173,13 @@ fun SubtopicsScreen(
                         index = index,
                         onLearnClick = { viewModel.onIntent(SubtopicsIntent.LearnClicked(subtopic.subtopicUid)) },
                         onQuizClick = { viewModel.onIntent(SubtopicsIntent.QuizClicked(subtopic.subtopicUid)) },
-                        onResetClick = { viewModel.onIntent(SubtopicsIntent.ResetSubtopicRequested(subtopic.subtopicUid)) },
+                        onResetClick = {
+                            viewModel.onIntent(
+                                SubtopicsIntent.ResetSubtopicRequested(
+                                    subtopic.subtopicUid
+                                )
+                            )
+                        },
                     )
                 }
                 item(key = "__all_words__") {
@@ -229,37 +240,32 @@ fun SubtopicsScreen(
 @Composable
 private fun PreviewSubtopicCardNoProgress() {
     LearnEnglishWordsTheme {
-        SubtopicCard(
-            subtopic = Subtopic("animals/wild", "animals", "Wild Animals", 20, 0),
-            index = 0,
-            onLearnClick = {},
-            onQuizClick = {},
-            onResetClick = {},
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 24.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            SubtopicCard(
+                subtopic = Subtopic("animals/wild", "animals", "Wild Animals", 20, 0),
+                index = 0,
+                onLearnClick = {},
+                onQuizClick = {},
+                onResetClick = {},
+            )
+            SubtopicCard(
+                subtopic = Subtopic("animals/domestic", "animals", "Domestic Animals", 15, 73),
+                index = 1,
+                onLearnClick = {},
+                onQuizClick = {},
+                onResetClick = {},
+            )
+
+            AllWordsCard(onClick = {})
+        }
     }
 }
 
-@PreviewMb
-@Composable
-private fun PreviewSubtopicCardWithProgress() {
-    LearnEnglishWordsTheme {
-        SubtopicCard(
-            subtopic = Subtopic("animals/domestic", "animals", "Domestic Animals", 15, 73),
-            index = 1,
-            onLearnClick = {},
-            onQuizClick = {},
-            onResetClick = {},
-        )
-    }
-}
-
-@PreviewMb
-@Composable
-private fun PreviewAllWordsCardPreview() {
-    LearnEnglishWordsTheme {
-        AllWordsCard(onClick = {})
-    }
-}
 
 @Composable
 private fun SubtopicCard(
@@ -271,85 +277,91 @@ private fun SubtopicCard(
 ) {
     val accent = accentColorAt(index)
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickableNoRipple { onLearnClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = AppCardSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
-        Row(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
+                .padding(16.dp),
         ) {
-            AccentAvatar(index = index, label = subtopic.title)
-            Column(
+            Text(
+                text = subtopic.title,
+                style = MaterialTheme.typography.titleLarge,
+                color = AppNavy,
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                text = "${subtopic.wordCount} words · ${subtopic.progressPercent}%",
+                style = MaterialTheme.typography.bodyLarge,
+                color = AppGray,
+            )
+            Row(
                 modifier = Modifier
-                    .weight(1f)
-                    .padding(horizontal = 12.dp),
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(
-                    text = subtopic.title,
-                    style = MaterialTheme.typography.titleSmall,
-                    color = AppNavy,
-                )
-                Text(
-                    text = "${subtopic.wordCount} words · ${subtopic.progressPercent}%",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = AppGray,
-                )
-                if (subtopic.progressPercent > 0) {
-                    Spacer(Modifier.height(6.dp))
-                    LinearProgressIndicator(
-                        progress = { subtopic.progressPercent / 100f },
-                        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(4.dp)),
-                        color = accent,
-                        trackColor = accent.copy(alpha = 0.18f),
+                //            AccentAvatar(index = index, label = subtopic.title)
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(horizontal = 12.dp),
+                ) {
+                }
+
+                // Tinted icon buttons
+                IconButton(
+                    onClick = onResetClick,
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                        .size(48.dp),
+                    colors = IconButtonDefaults.iconButtonColors(
+                        containerColor = AppGray.copy(alpha = 0.10f),
+                    ),
+                ) {
+                    Icon(
+                        Icons.Default.Refresh,
+                        contentDescription = "Reset ${subtopic.title}",
+                        tint = AppGray,
+                        modifier = Modifier.size(32.dp),
                     )
                 }
-            }
-            // Tinted icon buttons
-            IconButton(
-                onClick = onLearnClick,
-                modifier = Modifier.size(36.dp),
-                colors = IconButtonDefaults.iconButtonColors(
-                    containerColor = accent.copy(alpha = 0.10f),
-                ),
-            ) {
-                Icon(
-                    Icons.AutoMirrored.Filled.MenuBook,
-                    contentDescription = "Learn ${subtopic.title}",
-                    tint = accent,
-                    modifier = Modifier.size(18.dp),
-                )
-            }
-            IconButton(
-                onClick = onQuizClick,
-                modifier = Modifier.size(36.dp).padding(start = 4.dp),
-                colors = IconButtonDefaults.iconButtonColors(
-                    containerColor = AppPrimary.copy(alpha = 0.10f),
-                ),
-            ) {
-                Icon(
-                    Icons.Default.Quiz,
-                    contentDescription = "Quiz ${subtopic.title}",
-                    tint = AppPrimary,
-                    modifier = Modifier.size(18.dp),
-                )
-            }
-            IconButton(
-                onClick = onResetClick,
-                modifier = Modifier.size(36.dp).padding(start = 4.dp),
-                colors = IconButtonDefaults.iconButtonColors(
-                    containerColor = AppGray.copy(alpha = 0.10f),
-                ),
-            ) {
-                Icon(
-                    Icons.Default.Refresh,
-                    contentDescription = "Reset ${subtopic.title}",
-                    tint = AppGray,
-                    modifier = Modifier.size(18.dp),
-                )
+
+//                IconButton(
+//                    onClick = onLearnClick,
+//                    modifier = Modifier.padding(start = 8.dp).size(48.dp),
+//                    colors = IconButtonDefaults.iconButtonColors(
+//                        containerColor = accent.copy(alpha = 0.10f),
+//                    ),
+//                ) {
+//                    Icon(
+//                        Icons.AutoMirrored.Filled.MenuBook,
+//                        contentDescription = "Learn ${subtopic.title}",
+//                        tint = accent,
+//                        modifier = Modifier.size(32.dp),
+//                    )
+//                }
+                IconButton(
+                    onClick = onQuizClick,
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                        .size(48.dp),
+                    colors = IconButtonDefaults.iconButtonColors(
+                        containerColor = AppPrimary.copy(alpha = 0.10f),
+                    ),
+                ) {
+                    Icon(
+                        Icons.Default.Quiz,
+                        contentDescription = "Quiz ${subtopic.title}",
+                        tint = accent,
+                        modifier = Modifier.size(32.dp),
+                    )
+                }
+
             }
         }
     }
@@ -373,13 +385,15 @@ private fun AllWordsCard(onClick: () -> Unit) {
         ) {
             Text(
                 text = "All words",
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.titleLarge,
                 color = AppNavy,
             )
+
             Icon(
                 Icons.AutoMirrored.Filled.MenuBook,
                 contentDescription = "All words",
                 tint = AppPrimary,
+                modifier = Modifier.size(32.dp),
             )
         }
     }
